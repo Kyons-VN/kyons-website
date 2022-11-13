@@ -1,0 +1,13 @@
+---
+import MainContent from '@components/MainContent.astro';
+// import Menu from '@components/Menu.astro';
+import Menu from '@components/Menu';
+import label from '@data/languages/vi.json';
+import Layout from '@layouts/Layout.astro';
+import '@styles/global.scss';
+---
+
+<Layout title='Welcome to Astro.'>
+  <Menu l={label.menu} client:only />
+  <MainContent l={label} />
+</Layout>

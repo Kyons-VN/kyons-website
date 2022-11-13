@@ -1,0 +1,32 @@
+@import 'fonts.scss';
+html{
+  @apply h-full;
+}
+body{
+  @apply h-full m-0 p-0 text-sm bg-white flex;
+
+  font-family: 'Montserrat', sans-serif;
+}
+.why{
+  @apply flex flex-col items-center;
+
+  width: 320px;
+  background-image: url(Hero/why.svg);
+  background-repeat: no-repeat;
+  background-position: center 33px;
+}
+.icon-monitor{
+  background-image: url(Hero/button.png);
+  width: 24px;
+  height: 24px;
+}
+.bg-home{
+  background-image: url('Home.svg');
+  background-position: center bottom;
+  background-size: cover; 
+}
+.bg-about-us{
+  background-image: url('About-us.svg');
+  background-position: center bottom;
+  background-size: cover;
+}

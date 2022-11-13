@@ -1,0 +1,24 @@
+{
+  "lang": "en",
+  "menu": {
+    "aboutUs": "About Us",
+    "solution": "Solution",
+    "kyonsCreator": "Kyons Creator",
+    "contact": "Contact"
+  },
+  "home": {
+    "knowledgeStart1": "IT ALL BEGINS WITH A",
+    "knowledgeStart2": "WHY",
+    "kyonsIs": "Kyons™ là nền tảng học tập ứng dụng trí tuệ nhân tạo (AI) giúp bạn tập trung học những gì mình yếu để đạt được kết quả cao nhất trong thời gian ngắn nhất!",
+    "ifStudent": "Nếu bạn là học sinh, có thể trải nghiệm Kyons tại đây:",
+    "startNow": "Học ngay thôi"
+  },
+  "aboutUs": {
+    "kyons": "About Kyons",
+    "text1": "Built by passionate yet practical learners, Kyons is on a mission to create a learning solution from learners' perspective to solve learners' problems.",
+    "text2": "We believe learning is a journey that should be fun enough to be on and short enough for one to realise their ultimate dream in the quickest and most efficient way.",
+    "ethos": "Accelerated by World Bank and SUNY-Korea",
+    "antler": "Invested by Antler Vietnam Venture Capital",
+    "bssc": "Incubated by BSSC"
+  }
+}
