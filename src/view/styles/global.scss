@@ -11,22 +11,22 @@ body{
   @apply flex flex-col items-center;
 
   width: 320px;
-  background-image: url(Hero/why.svg);
+  background-image: url('/images/Hero/why.svg');
   background-repeat: no-repeat;
   background-position: center 33px;
 }
 .icon-monitor{
-  background-image: url(Hero/button.png);
+  background-image: url('/imagesHero/button.png');
   width: 24px;
   height: 24px;
 }
 .bg-home{
-  background-image: url('Home.svg');
+  background-image: url('/images/Home.svg');
   background-position: center bottom;
   background-size: cover; 
 }
 .bg-about-us{
-  background-image: url('About-us.svg');
+  background-image: url('/images/About-us.svg');
   background-position: center bottom;
   background-size: cover;
 }
