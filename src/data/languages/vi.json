@@ -1,6 +1,6 @@
 {
-  "lang": "vi",
   "menu": {
+    "lang": "VI",
     "aboutUs": "Về chúng tôi",
     "solution": "Giải pháp",
     "kyonsCreator": "Kyons Creator",
@@ -20,5 +20,43 @@
     "ethos": "Tăng tốc khởi nghiệp bởi Ngân hàng Thế giới và SUNY-Korea",
     "antler": "Cấp vốn bởi quỹ đầu tư Antler Việt Nam",
     "bssc": "Ươm tạo bởi BSSC"
+  },
+  "solution": {
+    "ourSolution": "Giải pháp của chúng tôi",
+    "mockTest": "Làm bài kiểm tra thử",
+    "mockTestDesc": "Sau khi bạn đặt ra mục tiêu của mình, chúng tôi sẽ đưa ra một bài kiểm tra thông minh giúp bạn nhận ra mình đang thiếu sót những kiến thức gì.",
+    "registerNow": "Cảm thấy thú vị?<br />Đăng ký để trải nghiệm ngay!",
+    "createAccount": "Tạo tài khoản cho học sinh",
+    "yourLearningPath": "Lộ trình học dành riêng cho bạn",
+    "yourLearningPathDesc": "Dựa vào kết quả bài kiểm tra và qua quá trình học, AI của Kyons sẽ tính toán và gợi ý kiến thức cần học tiếp theo. Từ đó, bạn sẽ có một lộ trình học tập được cá nhân hoá, giúp việc học trở nên hiệu quả hơn bao giờ hết.",
+    "tutor": "Gia sư",
+    "tutorDesc": "Khi gặp khó khăn trong lúc học, bạn có thể gọi gia sư để giúp bạn giải đáp thắc mắc mọi lúc mọi nơi, vô cùng tiện lợi."
+  },
+  "creator": {
+    "kyonsCreator": "Kyons Creator",
+    "kyonsCreatorDesc": "Bạn là giáo viên và muốn có thêm thu nhập bằng cách đóng góp vào kho câu hỏi của Kyons? Nhấn vào nút \"Tham gia\" để tìm hiểu thêm!",
+    "joinUs": "Tham gia"
+  },
+  "contact": {
+    "contact": "Liên hệ với chúng tôi",
+    "contactDesc": "Bạn có thể gửi thắc mắc của mình bằng cách điền thông tin vào ô bên dưới, hoặc gọi đến số điện thoại: 090.664.1611",
+    "youAre": "Bạn là *",
+    "parents": "Phụ huynh",
+    "teachers": "Giáo viên",
+    "educators": "Chuyên viên giáo dục",
+    "investors": "Nhà đầu tư",
+    "presses": "Báo chí",
+    "potentialTeamates": "Đồng đội tiềm năng",
+    "email": "Email *",
+    "name": "Tên của bạn",
+    "message": "Lời nhắn *",
+    "send": "Gửi tin nhắn"
+  },
+  "footer": {
+    "company": "Công ty TNHH Kyons ",
+    "address": "L17-11, Vincom Center, 72 Lê Thánh Tôn, Phường Bến Nghé, Quận 1, TP.HCM ",
+    "phone": "090.664.1611",
+    "social": "Cập nhật thông tin tại",
+    "copy": "© Bản quyền trang web thuộc về công ty TNHH Kyons."
   }
 }

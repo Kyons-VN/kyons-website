@@ -54,6 +54,11 @@ module.exports = {
         black: '#000000',
         white: '#ffffff',
       },
+      boxShadow: {
+        1: '0px 3px 5px rgba(0, 0, 0, 0.1)',
+        2: '0px 5px 10px rgba(0, 0, 0, 0.15)',
+        3: '0px 15px 15px rgba(0, 0, 0, 0.3)',
+      },
     },
   },
   plugins: [],

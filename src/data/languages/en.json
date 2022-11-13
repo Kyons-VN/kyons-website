@@ -1,6 +1,6 @@
 {
-  "lang": "en",
   "menu": {
+    "lang": "EN",
     "aboutUs": "About Us",
     "solution": "Solution",
     "kyonsCreator": "Kyons Creator",
@@ -20,5 +20,43 @@
     "ethos": "Accelerated by World Bank and SUNY-Korea",
     "antler": "Invested by Antler Vietnam Venture Capital",
     "bssc": "Incubated by BSSC"
+  },
+  "solution": {
+    "ourSolution": "Our solutions",
+    "mockTest": "Mock tests",
+    "mockTestDesc": "Once you have defined your goals, we will provide a test to identify any gaps in your knowledge.",
+    "registerNow": "Feeling interested?<br />Create an account right now!",
+    "createAccount": "Create a student account",
+    "yourLearningPath": "Your personal learning path",
+    "yourLearningPathDesc": "Based on your test results and learning progress, Kyons proprietary AI will determine what you should learn next, giving you a personalised curriculum that makes your learning more efficient than ever.",
+    "tutor": "Tutor",
+    "tutorDesc": "If you get stuck anywhere on your learning journey, an on-demand tutor is always a click away to come to your assistance."
+  },
+  "creator": {
+    "kyonsCreator": "Kyons Creator",
+    "kyonsCreatorDesc": "You are a teacher and want to earn more income by contributing to Kyons' question bank? Click the \"Join us\" button to learn more!",
+    "joinUs": "Join us"
+  },
+  "contact": {
+    "contact": "Contacts",
+    "contactDesc": "You can contact us by filling out the form below to send us a message or you can simply reach us by phone at 090.664.1611.",
+    "youAre": "You are *",
+    "parents": "Parents",
+    "teachers": "Teachers",
+    "educators": "Educators",
+    "investors": "Investors",
+    "presses": "Presses",
+    "potentialTeamates": "Potential teamates",
+    "email": "Email *",
+    "name": "Name",
+    "message": "Message *",
+    "send": "Send message"
+  },
+  "footer": {
+    "company": "Kyons LLC",
+    "address": "L17-11, Vincom Center, 72 Le Thanh Ton, Ben Nghe Ward, District 1, HCMC",
+    "phone": "090.664.1611",
+    "social": "For more information",
+    "copy": "Copyrighted © by Kyons LLC."
   }
 }

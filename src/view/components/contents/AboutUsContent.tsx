@@ -11,17 +11,17 @@ export function AboutUsContent({l}:Props){
     </div>
     <div class='grid grid-cols-3 gap-4'>
       <div class='p-6 border border-blueGrey-300 text-center rounded-lg'>
-        <img class='inline-block' src='About-Us/ethos.svg' alt='Ethos'/>
+        <img class='inline-block' src='images/About-Us/ethos.svg' alt='Ethos'/>
         <div class='h-3'></div>
         <span>{l.aboutUs.ethos}</span>
       </div>
       <div class='p-6 border border-blueGrey-300 text-center rounded-lg'>
-        <img class='inline-block' src='About-Us/antler.svg' alt='Antler'/>
+        <img class='inline-block' src='images/About-Us/antler.svg' alt='Antler'/>
         <div class='h-3'></div>
         <span>{l.aboutUs.antler}</span>
       </div>
       <div class='p-6 border border-blueGrey-300 text-center rounded-lg'>
-        <img class='inline-block' src='About-Us/bssc.svg' alt='BSSC'/>
+        <img class='inline-block' src='images/About-Us/bssc.svg' alt='BSSC'/>
         <div class='h-3'></div>
         <span>{l.aboutUs.bssc}</span>
       </div>

@@ -1,6 +1,8 @@
 import { useStore } from '@nanostores/preact';
 import '@styles/menu.scss';
+import { useState } from 'preact/hooks';
 import { activeMenu, setActive } from 'src/application/app';
+
 type Props = {
 	l: any
 };
@@ -8,11 +10,31 @@ type Props = {
 export default function Menu({ l }: Props) {
 
   const $activeMenu = useStore(activeMenu)
+  
   function setActiveMenu(index:number) {
 		setActive(index)
 	}
+
+  const language = l.lang
+  const [isHover, setIsHover] = useState(false)
+  const defaultClass = 'absolute flex flex-col gap-2 py-[6px] px-4 rounded-lg shadow-2 bg-white text-black w-full left-0'
+
+  function setLanguage(lang:string) {
+    if(lang!=language){
+      if(lang=='VI'){
+        window.location.href = window.location.href.replace('/en','')
+      }
+      else{
+        window.location.href = window.location.href+'en'
+      }
+    }
+		else {
+      setIsHover(false)
+    }
+	}
+  
   return <nav class='menu'>
-      <img class='w-[100px] cursor-pointer' src='logo.svg' alt='Logo' onClick={()=>{setActiveMenu(0)}} />
+      <img class='w-[100px] cursor-pointer' src='images/logo.svg' alt='Logo' onClick={()=>{setActiveMenu(0)}} />
       <ul class='menu-items'>
         <li className={$activeMenu==1?'active':null}><span onClick={()=>{setActiveMenu(1)}}>{l.aboutUs}</span></li>
         <li className={$activeMenu==2?'active':null}><span onClick={()=>{setActiveMenu(2)}}>{l.solution}</span></li>
@@ -20,5 +42,14 @@ export default function Menu({ l }: Props) {
         <span class='flex-1'></span>
         <li className={$activeMenu==4?'active':null}><span onClick={()=>{setActiveMenu(4)}}>{l.contact}</span></li>
       </ul>
+      <div class='flex flex-row relative h-10 px-4 py-[10px] items-center justify-between text-sm w-24' onClick={() => setIsHover(!isHover)} onBlur={() => setIsHover(false)} tabIndex={0} >
+        <span>{language}</span>
+        <i className={isHover?'icon-ArrowUp':'icon-ArrowDown'}></i>
+        <div className={isHover?`${defaultClass} flex`:`${defaultClass} hidden`} style="bottom: calc(-100% - 30px);"  onClick={() => setIsHover(false)}>
+          <div className={language=='VI'?'text-orange cursor-pointer':'cursor-pointer'} onClick={()=>setLanguage('VI')}>VI</div>
+          <hr class='text-blueGrey-300' />
+          <div className={language=='EN'?'text-orange cursor-pointer':'cursor-pointer'} onClick={()=>setLanguage('EN')}>EN</div>
+        </div>
+      </div>
     </nav>
 }

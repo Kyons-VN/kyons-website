@@ -1,0 +1,22 @@
+{
+  "Empty class": {
+    "prefix": "class",
+    "body": ["class='$1'"],
+    "description": "Empty class"
+  },
+  "Empty div with class": {
+    "prefix": "div",
+    "body": ["<div class='$1'></div>"],
+    "description": "Empty div with class"
+  },
+  "innerHtml": {
+    "prefix": "innerHtml",
+    "body": ["dangerouslySetInnerHTML={{__html: $1}}"],
+    "description": "innerHTML in the browser DOM"
+  },
+  "Add <img>": {
+    "prefix": "img",
+    "body": ["<img src='images/$1' alt='$2' />"],
+    "description": "Add <img> tag"
+  }
+}

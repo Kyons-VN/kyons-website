@@ -23,4 +23,6 @@ export default defineConfig({
     }),
     preact(),
   ],
+  // base: '/website',
+  // site: 'https://kyonsvn.web.app',
 });
