@@ -9,19 +9,24 @@ export function AboutUsContent({l}:Props){
       <span>{l.aboutUs.text1}</span>
       <span>{l.aboutUs.text2}</span>
     </div>
-    <div class='grid grid-cols-3 gap-4'>
+    <div class='md:hidden w-1/2 p-6 border border-blueGrey-300 text-center rounded-lg'>
+      <img class='inline-block h-10' src='images/About-Us/antler.webp' alt='Antler'/>
+      <div class='h-3'></div>
+      <span>{l.aboutUs.antler}</span>
+    </div>
+    <div class='grid grid-cols-2 md:grid-cols-3 gap-4 p-6'>
       <div class='p-6 border border-blueGrey-300 text-center rounded-lg'>
-        <img class='inline-block' src='images/About-Us/ethos.svg' alt='Ethos'/>
+        <img class='inline-block h-10' src='images/About-Us/ethos.webp' alt='Ethos'/>
         <div class='h-3'></div>
         <span>{l.aboutUs.ethos}</span>
       </div>
-      <div class='p-6 border border-blueGrey-300 text-center rounded-lg'>
-        <img class='inline-block' src='images/About-Us/antler.svg' alt='Antler'/>
+      <div class='hidden md:block p-6 border border-blueGrey-300 text-center rounded-lg'>
+        <img class='inline-block h-10' src='images/About-Us/antler.webp' alt='Antler'/>
         <div class='h-3'></div>
         <span>{l.aboutUs.antler}</span>
       </div>
       <div class='p-6 border border-blueGrey-300 text-center rounded-lg'>
-        <img class='inline-block' src='images/About-Us/bssc.svg' alt='BSSC'/>
+        <div class='flex items-center justify-center h-10'><img class='inline-block w-[111px]' src='images/About-Us/bssc.svg' alt='BSSC'/></div>
         <div class='h-3'></div>
         <span>{l.aboutUs.bssc}</span>
       </div>

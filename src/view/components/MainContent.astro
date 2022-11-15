@@ -3,12 +3,12 @@ import BackgroundLayer from '@components/BackgroundLayer';
 import InteractiveLayer from '@components/InteractiveLayer';
 
 export interface Props {
-  l: any;
+  l: any
 }
 
 const { l } = Astro.props
 ---
-<div class='w-full h-full flex relative'>
+<div class='w-full h-[calc(100vh_-_78px)] md:h-full flex relative'>
   <div class='absolute top-0 left-0 w-full h-full'><BackgroundLayer client:load /></div>
-  <div class='absolute top-0 left-0 w-full h-full'><InteractiveLayer l={l} client:load /></div>
+  <div class='absolute top-0 left-0 w-full h-full'><InteractiveLayer l={l} client:only /></div>
 </div>

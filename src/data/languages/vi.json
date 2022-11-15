@@ -1,16 +1,16 @@
 {
   "menu": {
     "lang": "VI",
-    "aboutUs": "Về chúng tôi",
+    "aboutUs": "Về Kyons",
     "solution": "Giải pháp",
-    "kyonsCreator": "Kyons Creator",
+    "kyonsCreator": "Kyons Creator Program",
     "contact": "Liên hệ"
   },
   "home": {
     "knowledgeStart1": "TRI THỨC KHỞI ĐẦU TỪ",
     "knowledgeStart2": "TẠI SAO",
-    "kyonsIs": "Kyons™ là nền tảng học tập ứng dụng trí tuệ nhân tạo (AI) giúp bạn tập trung học những gì mình yếu để đạt được kết quả cao nhất trong thời gian ngắn nhất!",
-    "ifStudent": "Nếu bạn là học sinh, có thể trải nghiệm Kyons tại đây:",
+    "kyonsIs": "Kyons™ là nền tảng học tập ứng dụng trí tuệ nhân tạo (AI) giúp bạn tập trung học những kiến thức mình chưa vững để đạt được kết quả cao nhất trong thời gian ngắn nhất!",
+    "ifStudent": "Nếu bạn là học sinh, bạn có thể trải nghiệm Kyons ngay dưới đây:",
     "startNow": "Học ngay thôi"
   },
   "aboutUs": {
@@ -33,13 +33,12 @@
     "tutorDesc": "Khi gặp khó khăn trong lúc học, bạn có thể gọi gia sư để giúp bạn giải đáp thắc mắc mọi lúc mọi nơi, vô cùng tiện lợi."
   },
   "creator": {
-    "kyonsCreator": "Kyons Creator",
     "kyonsCreatorDesc": "Bạn là giáo viên và muốn có thêm thu nhập bằng cách đóng góp vào kho câu hỏi của Kyons? Nhấn vào nút \"Tham gia\" để tìm hiểu thêm!",
     "joinUs": "Tham gia"
   },
   "contact": {
     "contact": "Liên hệ với chúng tôi",
-    "contactDesc": "Bạn có thể gửi thắc mắc của mình bằng cách điền thông tin vào ô bên dưới, hoặc gọi đến số điện thoại: 090.664.1611",
+    "contactDesc": "Nếu bạn quan tâm đến Kyons, xin vui lòng để lại thông tin. Kyons sẽ liên hệ với bạn",
     "youAre": "Bạn là *",
     "parents": "Phụ huynh",
     "teachers": "Giáo viên",
@@ -50,13 +49,15 @@
     "email": "Email *",
     "name": "Tên của bạn",
     "message": "Lời nhắn *",
-    "send": "Gửi tin nhắn"
+    "send": "Gửi tin nhắn",
+    "success": "Gửi thành công",
+    "error": "Có lỗi"
   },
   "footer": {
     "company": "Công ty TNHH Kyons ",
     "address": "L17-11, Vincom Center, 72 Lê Thánh Tôn, Phường Bến Nghé, Quận 1, TP.HCM ",
     "phone": "090.664.1611",
-    "social": "Cập nhật thông tin tại",
     "copy": "© Bản quyền trang web thuộc về công ty TNHH Kyons."
-  }
+  },
+  "signUp": "Đăng ký"
 }

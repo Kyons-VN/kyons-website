@@ -8,9 +8,8 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 .why{
-  @apply flex flex-col items-center;
+  @apply flex flex-col items-center w-[320px];
 
-  width: 320px;
   background-image: url('/images/Hero/why.svg');
   background-repeat: no-repeat;
   background-position: center 33px;
@@ -34,7 +33,7 @@ body{
   @apply px-[16px] py-[9.5px] bg-orange text-white rounded-md;
 }
 .indicators{
-  @apply list-none flex flex-row gap-8 mb-14 p-6;
+  @apply list-none flex flex-row justify-center md:justify-start gap-2 md:gap-8 mb-14 p-6;
   >li{
     @apply bg-blueGrey-400 cursor-pointer;
 
@@ -65,9 +64,10 @@ body{
   background-size: cover; 
 }
 .bg-footer{
-  background-image: url('/images/Contacts/footer.svg');
-  background-position: center top;
-  background-size: cover; 
+  // background-image: url('/images/Contacts/footer.svg');
+  // background-position: center top;
+  // background-size: cover; 
+  background: url('/images/Contacts/left.svg') left bottom no-repeat, url('/images/Contacts/right.svg') right bottom no-repeat, #1E293B;
 }
 h1 {
   font-size: 2.25rem;
@@ -134,4 +134,14 @@ option[value=""][disabled] {
 }
 option {
   color: #000;
+}
+
+@media (max-width: 767px) {
+  body{
+    padding-top: 78px;
+    height: 100vh;
+  }
+  .menu{
+    margin-top: -78px;
+  }
 }
