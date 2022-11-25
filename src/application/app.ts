@@ -8,10 +8,29 @@ export const activeSolution = atom(0);
 
 export const isScrolling = atom(false);
 
+function changeHash(index: number) {
+  console.log('index:', index);
+
+  switch (index) {
+    case 0:
+      window.location.hash = '';
+      break;
+    case 1:
+      window.location.hash = 'about-us';
+      break;
+
+    default:
+      break;
+  }
+  const e = new Event("onhashchange");
+  // window.dispatchEvent(e);
+}
+
 export function setActive(index: number, force: boolean = false) {
   if (index < 0 || index > 4 || isScrolling.get()) return
   if (force) {
     activeMenu.set(index)
+    // changeHash(index)
     return
   }
   if (activeMenu.get() == 2) {
@@ -26,6 +45,16 @@ export function setActive(index: number, force: boolean = false) {
   else {
     activeMenu.set(index);
   }
+}
+
+export function setNextSolution() {
+  if (activeSolution.get() == 2) return;
+  activeSolution.set(activeSolution.get() + 1);
+}
+
+export function setPreviousSolution() {
+  if (activeSolution.get() == 0) return;
+  activeSolution.set(activeSolution.get() - 1);
 }
 
 export function setActiveSolution(index: number) {

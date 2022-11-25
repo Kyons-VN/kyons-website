@@ -1,6 +1,7 @@
 {
   "menu": {
     "lang": "EN",
+    "languageCode": "en",
     "aboutUs": "About Kyons",
     "solution": "Our solutions",
     "kyonsCreator": "Kyons Creator Program",
@@ -37,7 +38,7 @@
     "joinUs": "Join us"
   },
   "contact": {
-    "contact": "Contacts Us",
+    "contact": "Contact Us",
     "contactDesc": "If you are interested in Kyons, please leave your contact here. We will connect with you as soon as possible.",
     "youAre": "You are *",
     "parents": "Parents",

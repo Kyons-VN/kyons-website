@@ -23,14 +23,19 @@ body{
   background-image: url('/images/Home.svg');
   background-position: center bottom;
   background-size: cover; 
+  background-repeat: no-repeat;
 }
 .bg-about-us{
   background-image: url('/images/About-us.svg');
   background-position: center bottom;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 .btn{
   @apply px-[16px] py-[9.5px] bg-orange text-white rounded-md;
+}
+.btn-outline{
+  @apply flex justify-center gap-3 px-4 py-2 text-orange border border-blueGrey-300 rounded-md bg-white;
 }
 .indicators{
   @apply list-none flex flex-row justify-center md:justify-start gap-2 md:gap-8 mb-14 p-6;
@@ -60,13 +65,11 @@ body{
 }
 .bg-contact{
   background-image: url('/images/Contacts/Contacts.svg');
-  background-position: center bottom;
+  background-position: bottom center;
   background-size: cover; 
+  background-repeat: no-repeat;
 }
 .bg-footer{
-  // background-image: url('/images/Contacts/footer.svg');
-  // background-position: center top;
-  // background-size: cover; 
   background: url('/images/Contacts/left.svg') left bottom no-repeat, url('/images/Contacts/right.svg') right bottom no-repeat, #1E293B;
 }
 h1 {
@@ -143,5 +146,17 @@ option {
   }
   .menu{
     margin-top: -78px;
+  }
+  .bg-home{
+    background-size: contain;
+  }
+  .bg-footer{
+    background-image: none;
+  }
+  .bg-contact{
+    background-size: contain;
+  }
+  .bg-about-us{
+    background-size: contain;
   }
 }
