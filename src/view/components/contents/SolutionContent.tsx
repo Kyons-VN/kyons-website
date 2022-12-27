@@ -32,12 +32,21 @@ export function SolutionContent({ l }: Props) {
         <div class='flex flex-col gap-6 pt-6 md:p-6 md:text-white md:mt-28 h-full'>
           <h5 class='text-orange'>{l.solution.ourSolution}</h5>
           <div class='md:hidden flex justify-center h-[25vh]'>
-            <img className={$activeSolution == 0 ? 'block' : 'hidden'} src='/images/Mock-Test/Group 1457.svg' />
+            <img
+              className={$activeSolution == 0 ? 'block' : 'hidden'}
+              src={`/images/${l.menu.lang}/mock-test.svg`}
+              alt={l.solution.mockTest}
+            />
             <img
               className={$activeSolution == 1 ? 'block' : 'hidden'}
-              src={`images/${l.menu.lang}/learning-path.svg`}
+              src={`/images/${l.menu.lang}/learning-path.svg`}
+              alt={l.solution.yourLearningPath}
             />
-            <img className={$activeSolution == 2 ? 'block' : 'hidden'} src='/images/Tutor/Group 1459.svg' />
+            <img
+              className={$activeSolution == 2 ? 'block' : 'hidden'}
+              src={`/images/${l.menu.lang}/tutor.svg`}
+              alt={l.solution.tutor}
+            />
           </div>
           <div className={$activeSolution == 0 ? 'flex flex-col gap-2 h-40' : 'hidden'}>
             <h6 class='font-bold'>{l.solution.mockTest}</h6>
@@ -73,13 +82,13 @@ export function SolutionContent({ l }: Props) {
       <div class='hidden md:flex w-full flex-1 h-full bg-lightOrange-4'>
         <ul class='inner'>
           <li className={$activeSolution == 0 ? 'active' : null} onClick={() => setActive(0)}>
-            <img src='/images/Mock-Test/Group 1457.svg' />
+            <img src={`/images/${l.menu.lang}/mock-test.svg`} alt={l.solution.mockTest} />
           </li>
           <li className={$activeSolution == 1 ? 'active' : null} onClick={() => setActive(1)}>
-            <img src={`images/${l.menu.lang}/learning-path.svg`} />
+            <img src={`/images/${l.menu.lang}/learning-path.svg`} alt={l.solution.yourLearningPath} />
           </li>
           <li className={$activeSolution == 2 ? 'active' : null} onClick={() => setActive(2)}>
-            <img src='/images/Tutor/Group 1459.svg' />
+            <img src={`/images/${l.menu.lang}/tutor.svg`} alt={l.solution.tutor} />
           </li>
         </ul>
       </div>
