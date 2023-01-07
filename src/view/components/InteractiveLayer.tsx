@@ -3,9 +3,8 @@ import { CreatorContent } from '@components/contents/CreatorContent';
 import { HomeContent } from '@components/contents/HomeContent';
 import { SolutionContent } from '@components/contents/SolutionContent';
 import { useStore } from '@nanostores/preact';
-import { useEffect } from 'preact/hooks';
 import { useSwipeable } from 'react-swipeable';
-import { activeMenu, setActive, setNextSolution, setPreviousSolution, setScrolling } from 'src/application/app';
+import { activeMenu, isGoUp, setActive, setNextSolution, setPreviousSolution, setScrolling } from 'src/application/app';
 import { ContactContent } from './contents/ContactContent';
 
 type Props = {
@@ -14,12 +13,13 @@ type Props = {
 
 export default function InteractiveLayer({ l }: Props) {
   const $activeMenu = useStore(activeMenu);
+  const $isGoUp = useStore(isGoUp);
   function setActiveMenu(index: number) {
     setActive(index);
   }
   let running = false;
   let interval: NodeJS.Timeout;
-  let isMobile = window.screen.width < 768;
+  let isMobile = document.body.offsetWidth < 768;
   const screenHeight = window.screen.height;
   var root = document.querySelector(':root');
 
@@ -75,27 +75,6 @@ export default function InteractiveLayer({ l }: Props) {
     }
   }
 
-  useEffect(() => {
-    console.log('useEffect');
-    // Trigger your effect
-    const element = document.querySelector('#interactive-layer');
-    const body = document.body;
-    window.document.addEventListener('onhashchange', () => {
-      console.log(window.location);
-    });
-
-    const scrollTop = 0,
-      scrollLeft = 0;
-    // window.pageYOffset || document.documentElement.scrollTop;
-    // scrollLeft =
-    // window.pageXOffset || document.documentElement.scrollLeft,
-    // changeWheelSpeed(this.base,0.1);
-    // element.addEventListener('wheel',(e) => wheel(e as MouseEvent));
-    return () => {
-      // Optional: Any cleanup code
-    };
-  }, []);
-
   const defaultClasses =
     'md:absolute md:top-0 md:left-0 w-full h-auto min-h-[calc(100vh_-_78px)] md:h-full md:flex-row md:justify-center';
   // console.log(isMobile);
@@ -116,22 +95,53 @@ export default function InteractiveLayer({ l }: Props) {
 
   return (
     <div id='interactive-layer' class='w-full h-full flex flex-col items-center relative' onWheel={(e) => wheel(e)}>
-      <div className={$activeMenu == 0 ? `${defaultClasses} md:flex` : `${defaultClasses} md:hidden `}>
+      <div
+        className={
+          ($activeMenu == 0 ? `${defaultClasses} opacity-1 z-10` : `${defaultClasses} opacity-0 z-0`) +
+          ($activeMenu == 0 || $activeMenu == 1 ? ' custom-transition' : ' custom-transition-1')
+        }
+        style={$activeMenu > 0 ? 'transform: translateY(-50%)' : null}
+      >
         <HomeContent l={l} />
       </div>
       <div
-        className={$activeMenu == 1 ? `${defaultClasses} md:flex` : `${defaultClasses} md:hidden `}
+        className={
+          ($activeMenu == 1
+            ? `${defaultClasses} md:opacity-1 z-10 ${!$isGoUp ? 'delay' : ''}`
+            : `${defaultClasses} md:opacity-0 z-0`) +
+          ($activeMenu == 0 || $activeMenu == 1 ? ' custom-transition' : ' custom-transition-1')
+        }
         style='min-height: unset'
       >
         <AboutUsContent l={l} />
       </div>
-      <div className={$activeMenu == 2 ? `${defaultClasses} md:flex` : `${defaultClasses} md:hidden `}>
+      <div
+        className={
+          $activeMenu == 2
+            ? `${defaultClasses} md:opacity-1 md:visible z-10`
+            : `${defaultClasses} md:opacity-0 md:invisible z-0`
+        }
+      >
         <SolutionContent l={l} />
       </div>
-      <div className={$activeMenu == 3 ? `${defaultClasses} md:flex` : `${defaultClasses} md:hidden `}>
+      <div
+        className={
+          ($activeMenu == 3
+            ? `${defaultClasses} md:opacity-1 md:visible z-10`
+            : `${defaultClasses} md:opacity-0 md:invisible z-0`) +
+          ($activeMenu == 3 ? ' custom-transition' : ' custom-transition-1')
+        }
+      >
         <CreatorContent l={l} />
       </div>
-      <div className={$activeMenu == 4 ? `${defaultClasses} md:flex` : `${defaultClasses} md:hidden `}>
+      <div
+        className={
+          ($activeMenu == 4
+            ? `${defaultClasses} md:opacity-1 md:visible z-10`
+            : `${defaultClasses} md:opacity-0 md:invisible z-0`) +
+          ($activeMenu == 4 ? ' custom-transition' : ' custom-transition-1')
+        }
+      >
         <ContactContent l={l} />
       </div>
     </div>

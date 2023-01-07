@@ -1,76 +1,55 @@
 @import 'fonts.scss';
-html{
+html {
   @apply h-full;
 }
-body{
+body {
   @apply h-full m-0 p-0 text-sm bg-white flex;
 
   font-family: 'Montserrat', sans-serif;
 }
-.why{
+.why {
   @apply flex flex-col items-center w-[320px];
 
-  background-image: url('/images/Hero/why.svg');
+  background-image: url('/images/Home/why.svg');
   background-repeat: no-repeat;
   background-position: center 33px;
 }
-.icon-monitor{
-  background-image: url('/images/Hero/button.png');
+.icon-monitor {
+  background-image: url('/images/Home/button.png');
   width: 24px;
   height: 24px;
 }
-.bg-home{
-  background-image: url('/images/Home.svg');
-  background-position: center bottom;
-  background-size: cover; 
-  background-repeat: no-repeat;
-}
-.bg-about-us{
-  background-image: url('/images/About-us.svg');
-  background-position: center bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.btn{
+.btn {
   @apply px-[16px] py-[9.5px] bg-orange text-white rounded-md;
 }
-.btn-outline{
+.btn-outline {
   @apply flex justify-center gap-3 px-4 py-2 text-orange border border-blueGrey-300 rounded-md bg-white;
 }
-.indicators{
+.indicators {
   @apply list-none flex flex-row justify-center md:justify-start gap-2 md:gap-8 mb-14 p-6;
-  >li{
+  > li {
     @apply bg-blueGrey-400 cursor-pointer;
 
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    &.active{
+    &.active {
       @apply bg-orange;
     }
   }
 }
-.inner{
+.inner {
   @apply w-full h-full relative;
-  >li{
-    @apply flex w-full h-full items-center justify-center transition-opacity absolute top-0 left-0;
+  > li {
+    @apply flex w-full h-full items-center justify-center absolute top-0 left-0;
 
-    &:not(.active){
-      @apply opacity-0
+    &:not(.active) {
+      @apply opacity-0;
     }
-    &.active{
-      @apply opacity-100
+    &.active {
+      @apply opacity-100;
     }
   }
-}
-.bg-contact{
-  background-image: url('/images/Contacts/Contacts.svg');
-  background-position: bottom center;
-  background-size: cover; 
-  background-repeat: no-repeat;
-}
-.bg-footer{
-  background: url('/images/Contacts/left.svg') left bottom no-repeat, url('/images/Contacts/right.svg') right bottom no-repeat, #1E293B;
 }
 h1 {
   font-size: 2.25rem;
@@ -110,16 +89,19 @@ h6,
   font-weight: 700;
   line-height: 150%;
 }
-select, input, textarea{
+select,
+input,
+textarea {
   @apply border border-blueGrey-400 rounded-md bg-white;
 }
-textarea{
+textarea {
   @apply p-[10px];
 }
-select,input{
+select,
+input {
   @apply h-[40px] p-[10px];
 }
-select{
+select {
   @apply py-[10px] pl-[10px] pr-10;
 
   /* Arrow */
@@ -132,31 +114,68 @@ select{
 select:required:invalid {
   @apply text-blueGrey-400;
 }
-option[value=""][disabled] {
+option[value=''][disabled] {
   display: none;
 }
 option {
   color: #000;
 }
+.custom-transition-1 {
+  transition: opacity ease-out 0.1s;
+}
+.custom-transition {
+  transition: all ease-out 0.8s;
+  &.delay {
+    transition-delay: 1s;
+  }
+  &.delay-1 {
+    transition-delay: 0.1s;
+  }
+  &.delay-2 {
+    transition-delay: 0.2s;
+  }
+  &.delay-3 {
+    transition-delay: 0.3s;
+  }
+  &.delay-4 {
+    transition-delay: 0.4s;
+  }
+  &.delay-5 {
+    transition-delay: 0.5s;
+  }
+}
+.bg-footer {
+  background: url('/images/Contacts/left.svg') left bottom no-repeat,
+    url('/images/Contacts/right.svg') right bottom no-repeat, #1e293b;
+}
 
 @media (max-width: 767px) {
-  body{
+  body {
     padding-top: 78px;
     height: 100vh;
   }
-  .menu{
+  .menu {
     margin-top: -78px;
   }
-  .bg-home{
-    background-size: contain;
-  }
-  .bg-footer{
+  .bg-footer {
     background-image: none;
   }
-  .bg-contact{
+  .bg-contact {
+    background-image: url('/images/Contacts/Contacts.svg');
+    background-position: bottom center;
     background-size: contain;
+    background-repeat: no-repeat;
   }
-  .bg-about-us{
+  .bg-home {
+    background-image: url('/images/Home.svg');
+    background-position: center bottom;
     background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .bg-about-us {
+    background-image: url('/images/About-us.svg');
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }

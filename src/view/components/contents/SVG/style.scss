@@ -1,0 +1,66 @@
+#mockTestAnimation {
+  // transition: all ease-in-out 1s;
+  g {
+    transition: all ease-out 0.5s;
+  }
+  &.start {
+    #window {
+      transform: scale(0);
+    }
+    #boy {
+      transform: translateX(+30px);
+    }
+    #table {
+      transform: translateX(-30px);
+    }
+    #YES {
+      opacity: 0;
+    }
+    #NO {
+      opacity: 0;
+    }
+    &.in {
+      g {
+        transition: all ease-out 0.5s;
+      }
+      #window {
+        transform: scale(1);
+        transition-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+        transition-delay: 0.4s;
+      }
+      #boy {
+        transform: translateX(-30px);
+      }
+      #table {
+        transform: translateX(30px);
+      }
+      #YES {
+        opacity: 1;
+        transition-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+        transition-delay: 0.2s;
+      }
+      #NO {
+        opacity: 1;
+        transition-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+        transition-delay: 0.2s;
+      }
+      &.out {
+        #window {
+          opacity: 0;
+        }
+        #boy {
+          opacity: 0;
+        }
+        #table {
+          opacity: 0;
+        }
+        #YES {
+          opacity: 0;
+        }
+        #NO {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

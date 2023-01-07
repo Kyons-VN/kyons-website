@@ -3,8 +3,10 @@ import { atom } from 'nanostores';
 export const isMenuOpen = atom(false);
 
 export const activeMenu = atom(0);
+export const isGoUp = atom(false);
 
 export const activeSolution = atom(0);
+export const isInSolution = atom(false);
 
 export const isScrolling = atom(false);
 
@@ -27,23 +29,41 @@ function changeHash(index: number) {
 }
 
 export function setActive(index: number, force: boolean = false) {
-  if (index < 0 || index > 4 || isScrolling.get()) return
+  if (index < 0 || index > 4 || isScrolling.get() || activeMenu.get() == index) return
+  isGoUp.set(activeMenu.get() > index)
+
   if (force) {
     activeMenu.set(index)
+
+    if (index == 2) {
+      isInSolution.set(true)
+    }
+    else {
+      isInSolution.set(false)
+    }
     // changeHash(index)
     return
   }
   if (activeMenu.get() == 2) {
-
-    if (activeSolution.get() == 0 && index == 1) activeMenu.set(1);
-    else if (activeSolution.get() == 2 && index == 3) activeMenu.set(3);
+    if (activeSolution.get() == 0 && index == 1) activeMenu.set(1)
+    else if (activeSolution.get() == 2 && index == 3) activeMenu.set(3)
     else {
-      if (index == 3) activeSolution.set(activeSolution.get() + 1)
-      if (index == 1) activeSolution.set(activeSolution.get() - 1)
+      if (index == 3) {
+        activeSolution.set(activeSolution.get() + 1)
+      }
+      else if (index == 1) {
+        activeSolution.set(activeSolution.get() - 1)
+      }
     }
   }
   else {
     activeMenu.set(index);
+  }
+  if (activeMenu.get() == 2) {
+    isInSolution.set(true)
+  }
+  else {
+    isInSolution.set(false)
   }
 }
 

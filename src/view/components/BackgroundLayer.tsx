@@ -1,13 +1,41 @@
-import { useStore } from '@nanostores/preact'
-import { activeMenu } from 'src/application/app'
+import { useStore } from '@nanostores/preact';
+import { activeMenu } from 'src/application/app';
+import { DesktopBackground } from './backgrounds/DesktopBackground';
 
-export default function BackgroundLayer() {
-  const defaultClasses = 'absolute top-0 left-0 w-full h-full transition-opacity opacity-'
-  const $activeMenu = useStore(activeMenu)
+type Props = {
+  l: any;
+};
 
-  return <div class='w-full h-full flex items-center relative'>
-    <div className={$activeMenu==0?`${defaultClasses}100 bg-home`:`${defaultClasses}0 bg-home`} class='opacity-100'></div>
-    <div className={$activeMenu==1?`${defaultClasses}100 bg-about-us`:`${defaultClasses}0 bg-about-us`} class='opacity-0'></div>
-    <div className={$activeMenu==2?`${defaultClasses}100 bg-lightOrange-4`:`${defaultClasses}0 bg-lightOrange-4`} class='opacity-0'></div>
-  </div>
+export default function BackgroundLayer({ l }: Props) {
+  const defaultClasses = 'w-full h-full transition-opacity opacity-';
+  const $activeMenu = useStore(activeMenu);
+  function animate() {
+    const date = new Date();
+
+    const hour = date.getHours() % 12;
+    const minute = date.getMinutes();
+    const second = date.getSeconds();
+
+    console.log(second);
+
+    requestAnimationFrame(animate);
+  }
+
+  // requestAnimationFrame(animate);
+  // console.log(window.screen);
+  return DesktopBackground();
+
+  return (
+    <div class='w-full h-full flex items-center relative'>
+      <div className={$activeMenu == 0 ? `${defaultClasses}100` : `${defaultClasses}0`} class='opacity-100'></div>
+      {/* <div
+        className={$activeMenu == 1 ? `${defaultClasses}100 bg-about-us` : `${defaultClasses}0 bg-about-us`}
+        class='opacity-0'
+      ></div>
+      <div
+        className={$activeMenu == 2 ? `${defaultClasses}100 bg-lightOrange-4` : `${defaultClasses}0 bg-lightOrange-4`}
+        class='opacity-0'
+      ></div> */}
+    </div>
+  );
 }

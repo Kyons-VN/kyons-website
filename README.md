@@ -48,4 +48,14 @@ All commands are run from the root of the project, from a terminal:
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
+```
+AWS_PROFILE=kyons-importer aws s3 rm s3://kyons.vn/index.html
+AWS_PROFILE=kyons-importer aws s3 rm s3://kyons.vn/
 AWS_PROFILE=kyons-importer aws s3 cp --recursive ./dist s3://kyons.vn
+```
+
+```
+AWS_PROFILE=kyons-importer aws s3 rm s3://website.kyons.vn/index.html
+AWS_PROFILE=kyons-importer aws s3 rm s3://website.kyons.vn/
+AWS_PROFILE=kyons-importer aws s3 cp --recursive ./dist s3://website.kyons.vn
+```

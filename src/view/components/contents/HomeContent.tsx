@@ -1,11 +1,19 @@
+import { useEffect, useState } from 'preact/hooks';
+
 type Props = {
   l: any;
 };
 
 export function HomeContent({ l }: Props) {
+  const [textStyle, setTextStyle] = useState('opacity:0');
+
+  useEffect(() => {
+    setTextStyle('transition: all ease-out 0.8s; opacity: 1; transition-delay: 1s');
+  });
+
   return (
-    <div className='bg-home w-full h-full flex justify-center'>
-      <div class='w-full h-screen p-10 md:py-6 md:px-0 md:w-[600px] flex flex-col gap-6 items-center'>
+    <div className='w-full h-full flex justify-center'>
+      <div class='w-full h-screen p-10 md:py-6 md:px-0 md:w-[600px] flex flex-col gap-6 items-center' style={textStyle}>
         <div class='why'>
           <h1 class='text-5xl font-bold text-center'>
             <span class='text-base'>{l.home.knowledgeStart1}</span>

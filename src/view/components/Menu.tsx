@@ -12,7 +12,7 @@ export default function Menu({ l }: Props) {
   const language = l.lang;
   const [isHover, setIsHover] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  let isMobile = window.screen.width < 768;
+  let isMobile = document.body.offsetWidth < 768;
 
   const defaultClass =
     'md:absolute flex flex-col gap-2 py-[6px] px-4 rounded-lg shadow-2 bg-white text-black w-full md:left-0';
