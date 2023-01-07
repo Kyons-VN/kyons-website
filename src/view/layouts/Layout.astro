@@ -9,6 +9,17 @@ const { lang } = Astro.props;
 <!DOCTYPE html>
 <html lang={lang}>
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-WZTFKM88D0'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-WZTFKM88D0');
+    </script>
     <base href={lang == 'vi' ? '/' : `/${lang}/`} />
     <meta charset='UTF-8' />
     <meta
