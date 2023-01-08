@@ -1,7 +1,9 @@
+import { Size } from '../SolutionSVG';
+
 type Props = {
   l: string;
   class: string;
-  size: [number, number];
+  size: Size;
   viewBox: string;
 };
 
@@ -18,7 +20,7 @@ export function MockTestSVG(props: Props) {
         class={props.class}
       >
         <g id='mock-test'>
-          <g id='window' clip-path='url(#clip0_684_229)' transform-origin='center'>
+          <g id='window' clip-path='url(#clip0_684_229)'>
             <g id='board'>
               <g id='Group'>
                 <g id='Group_2'>
@@ -525,7 +527,7 @@ export function MockTestSVG(props: Props) {
                   fill='#FED7AA'
                 />
               </g>
-              <g id='YES' transform-origin='center'>
+              <g id='YES'>
                 <path
                   id='Union'
                   fill-rule='evenodd'
@@ -541,7 +543,7 @@ export function MockTestSVG(props: Props) {
                   fill='white'
                 />
               </g>
-              <g id='NO' transform-origin='center'>
+              <g id='NO'>
                 <path
                   id='Union_2'
                   fill-rule='evenodd'
@@ -588,7 +590,7 @@ export function MockTestSVG(props: Props) {
         class={props.class}
       >
         <g id='mock-test'>
-          <g id='window' transform-origin='center'>
+          <g id='window'>
             <g id='Group'>
               <g id='Group_2'>
                 <g id='Group_3'>

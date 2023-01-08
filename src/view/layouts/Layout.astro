@@ -2,7 +2,6 @@
 export interface Props {
   lang: string;
 }
-
 const { lang } = Astro.props;
 ---
 
@@ -10,8 +9,8 @@ const { lang } = Astro.props;
 <html lang={lang}>
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src='https://www.googletagmanager.com/gtag/js?id=G-WZTFKM88D0'></script>
-    <script>
+    {Astro.url.origin=='https://kyons.vn' && <script async src='https://www.googletagmanager.com/gtag/js?id=G-WZTFKM88D0'></script>}
+    {Astro.url.origin=='https://kyons.vn' && <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -19,7 +18,7 @@ const { lang } = Astro.props;
       gtag('js', new Date());
 
       gtag('config', 'G-WZTFKM88D0');
-    </script>
+    </script>}
     <base href={lang == 'vi' ? '/' : `/${lang}/`} />
     <meta charset='UTF-8' />
     <meta

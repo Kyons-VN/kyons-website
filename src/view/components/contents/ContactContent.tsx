@@ -1,4 +1,6 @@
+import { activeMenu } from '@application/app';
 import Footer from '@components/Footer';
+import { useStore } from '@nanostores/preact';
 import { useState } from 'preact/hooks';
 
 type Props = {
@@ -30,18 +32,31 @@ export function ContactContent({ l }: Props) {
       });
   }
 
+  const $activeMenu = useStore(activeMenu);
+
   return (
     <div class='flex flex-col w-full h-screen'>
       <div id='contact' class='absolute mt-[-78px]'></div>
       <div class='flex-1 flex flex-col gap-6 items-center justify-center p-6 bg-contact'>
         <div class='w-full flex flex-col gap-6 items-center'>
-          <h5 class='text-orange'>{l.contact.contact}</h5>
-          <span class='text-center'>{l.contact.contactDesc}</span>
+          <h5
+            class='text-orange custom-transition'
+            style={$activeMenu != 4 ? 'opacity: 0;transform: translateY(80px);' : null}
+          >
+            {l.contact.contact}
+          </h5>
+          <span
+            class='text-center custom-transition delay-1'
+            style={$activeMenu != 4 ? 'opacity: 0;transform: translateY(80px);' : null}
+          >
+            {l.contact.contactDesc}
+          </span>
         </div>
         <form onSubmit={handleSubmit} class='w-full md:w-[600px] flex flex-col gap-6'>
           <div class='flex flex-col gap-2'>
             <select
-              class='control'
+              class='control custom-transition delay-2'
+              style={$activeMenu != 4 ? 'opacity: 0;transform: translateY(80px);' : null}
               name='type'
               id=''
               required
@@ -65,6 +80,8 @@ export function ContactContent({ l }: Props) {
               required
               value={email}
               onChange={(event) => setEmail(event.target.value)}
+              class='custom-transition delay-3'
+              style={$activeMenu != 4 ? 'opacity: 0;transform: translateY(80px);' : null}
             />
             <input
               name='name'
@@ -72,6 +89,8 @@ export function ContactContent({ l }: Props) {
               placeholder={l.contact.name}
               value={name}
               onChange={(event) => setName(event.target.value)}
+              class='custom-transition delay-4'
+              style={$activeMenu != 4 ? 'opacity: 0;transform: translateY(80px);' : null}
             />
             <textarea
               name='message'
@@ -81,6 +100,8 @@ export function ContactContent({ l }: Props) {
               value={message}
               onChange={(event) => setMessage(event.target.value)}
               rows='3'
+              class='custom-transition delay-5'
+              style={$activeMenu != 4 ? 'opacity: 0;transform: translateY(80px);' : null}
             ></textarea>
           </div>
           <div
@@ -92,7 +113,10 @@ export function ContactContent({ l }: Props) {
           >
             {sended == 1 ? l.contact.success : l.contact.error}
           </div>
-          <div class='w-full flex justify-center items-center'>
+          <div
+            class='w-full flex justify-center items-center custom-transition delay-6'
+            style={$activeMenu != 4 ? 'opacity: 0;transform: translateY(80px);' : null}
+          >
             <button class='btn' type='submit'>
               {l.contact.send}
             </button>

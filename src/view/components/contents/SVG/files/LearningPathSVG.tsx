@@ -1,7 +1,9 @@
+import { Size } from '../SolutionSVG';
+
 type Props = {
   l: string;
   class: string;
-  size: [number, number];
+  size: Size;
   viewBox: string;
 };
 

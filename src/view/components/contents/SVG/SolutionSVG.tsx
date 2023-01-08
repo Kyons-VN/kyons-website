@@ -4,6 +4,7 @@ import { Component } from 'preact';
 import { StateUpdater, useState } from 'preact/hooks';
 import { LearningPathSVG } from './files/LearningPathSVG';
 import { MockTestSVG } from './files/MockTestSVG';
+import { TutorSVG } from './files/TutorSVG';
 import './style.scss';
 
 enum SvgFile {
@@ -12,41 +13,39 @@ enum SvgFile {
   Tutor,
 }
 
+export type Size = [Width: number, Height: number];
+
 type Props = {
   l: string;
   file: SvgFile;
-  size: [number, number];
+  size: Size;
 };
 
 class SolutionSVG extends Component<Props> {
   setClassName: StateUpdater<string>;
   isInSolution: boolean;
   activeMenu: number;
-  activeSolution: number;
   componentDidMount() {
+    let $activeSolution: number;
     activeSolution.subscribe((value) => {
-      this.activeSolution = value;
-
-      // if (this.isInSolution && value == 0) {
+      $activeSolution = value;
       // setTimeout(() => {
-      // this.setClassName('start in');
+      this.setClassName(value == this.props.file ? 'start in' : 'start');
       // }, 1000);
-      // }
     });
     isInSolution.subscribe((value) => {
-      if (this.activeSolution == this.props.file && value) {
+      if ($activeSolution == this.props.file && value) {
         this.setClassName('start in');
       } else {
-        if (!value || (value && this.activeSolution != this.props.file)) this.setClassName('start');
+        if (!value || (value && $activeSolution != this.props.file)) this.setClassName('start');
       }
     });
   }
   render(props: Props) {
     this.isInSolution = useStore(isInSolution);
     this.activeMenu = useStore(activeMenu);
-    this.activeSolution = useStore(activeSolution);
-    const [width, setWidth] = useState(0);
-    const [height, setHeight] = useState(0);
+    const [width, setWidth] = useState(props.size[0]);
+    const [height, setHeight] = useState(props.size[1]);
     const [className, setClassName] = useState('start');
     this.setClassName = setClassName;
     let minX = 0;
@@ -89,13 +88,6 @@ class SolutionSVG extends Component<Props> {
       setViewBox(`${minX} ${minY} ${svgOriginalWidth} ${svgOriginalHeight}`);
     };
 
-    // useEffect(() => {
-    //   if ($activeSolution == 0) {
-    //     setTimeout(() => {
-    //       setClassName('start in');
-    //     }, 2000);
-    //   }
-    // }, []);
     return (
       <div class='flex w-full justify-center'>
         {props.file == SvgFile.MockTest && (
@@ -104,6 +96,7 @@ class SolutionSVG extends Component<Props> {
         {props.file == SvgFile.LearningPath && (
           <LearningPathSVG l={props.l} class={className} size={props.size} viewBox={viewBox} />
         )}
+        {props.file == SvgFile.Tutor && <TutorSVG l={props.l} class={className} size={props.size} viewBox={viewBox} />}
       </div>
     );
   }

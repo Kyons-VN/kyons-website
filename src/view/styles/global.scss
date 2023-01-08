@@ -143,10 +143,53 @@ option {
   &.delay-5 {
     transition-delay: 0.5s;
   }
+  &.delay-6 {
+    transition-delay: 0.6s;
+  }
 }
 .bg-footer {
   background: url('/images/Contacts/left.svg') left bottom no-repeat,
     url('/images/Contacts/right.svg') right bottom no-repeat, #1e293b;
+}
+@keyframes fadeOutLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+@keyframes fadeOutRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 767px) {

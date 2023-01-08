@@ -21,10 +21,10 @@ export function DesktopBackground() {
   const [viewBox, setViewBox] = useState(`${minX} ${minY} ${svgOriginalWidth} ${svgOriginalHeight}`);
 
   const updateViewport = () => {
-    const interactiveLayer = document.getElementById('interactive-layer');
     // if (interactiveLayer == undefined) return;
 
     if (document.body.offsetWidth >= 768) {
+      const interactiveLayer = document.getElementById('interactive-layer');
       if (interactiveLayer.offsetWidth / interactiveLayer.offsetHeight >= svgOriginRatio) {
         setWidth(interactiveLayer.offsetWidth);
         setHeight(0);
@@ -46,12 +46,12 @@ export function DesktopBackground() {
 
   useEffect(() => {
     window.addEventListener('resize', updateViewport);
-    setTimeout(() => {
-      updateViewport();
-    }, 100);
     if ($activeMenu == 0) {
       setClassName('start in');
     }
+    document.addEventListener('DOMContentLoaded', function (event) {
+      updateViewport();
+    });
   }, []);
 
   return (

@@ -17,18 +17,26 @@ type Props = {
 
 export class SolutionContent extends Component<Props> {
   s: NodeListOf<Element>[];
-  initialized = false;
-  activeSolution: number;
+  fade = (elms: NodeListOf<Element>, isIn = true, isLeft = true) => {
+    elms.forEach((e) => {
+      e.setAttribute('style', `animation: fade${isIn ? 'In' : 'Out'}${isLeft ? 'Left' : 'Right'} 1s forwards;`);
+    });
+  };
   componentDidMount() {
+    let $activeSolution = 0;
+    let $isInSolution = false;
     this.s = [document.querySelectorAll('.s0'), document.querySelectorAll('.s1'), document.querySelectorAll('.s2')];
     activeSolution.subscribe((value) => {
-      this.activeSolution = value;
-
-      // if (this.isInSolution && value == 0) {
+      console.log(value);
+      const isLeft = value > $activeSolution;
+      this.fade(this.s[$activeSolution], false, isLeft);
       // setTimeout(() => {
-      // this.setClassName('start in');
+      this.fade(this.s[value], true, !isLeft);
       // }, 1000);
-      // }
+      $activeSolution = value;
+    });
+    isInSolution.subscribe((value) => {
+      $isInSolution = value;
     });
   }
   componentWillUnmount() {
@@ -37,33 +45,12 @@ export class SolutionContent extends Component<Props> {
   render(props) {
     const l = props.l;
     // state === this.state
-    const $activeSolution = this.activeSolution;
+    const $activeSolution = useStore(activeSolution);
     const $isInSolution = useStore(isInSolution);
 
-    function hide(elms: HTMLElement[]) {
-      elms.forEach((e) => {
-        console.log(e.classList);
-      });
-    }
-
-    function setActive(index: number) {
+    const setActive = (index: number) => {
       setActiveSolution(index);
-      switch (index) {
-        case 0:
-          // console.log(this.s[0]);
-          // hide([...this.s[1], ...this.s[2]]);
-          break;
-        case 1:
-          // console.log(this.s[1]);
-          break;
-        case 2:
-          // console.log(this.s[2]);
-          break;
-
-        default:
-          break;
-      }
-    }
+    };
 
     const handlers = useSwipeable({
       // onSwipedLeft: () => setActiveMenu($activeMenu + 1),
@@ -114,28 +101,54 @@ export class SolutionContent extends Component<Props> {
                 // className={
                 //   $activeSolution == 0 ? 'flex flex-col gap-2 h-40 custom-transition delay-3 opacity-1' : 'opacity-0 hidden'
                 // }
-                class='flex flex-col gap-2 h-40 absolute'
+                class='flex flex-col gap-2 h-40 absolute s0'
               >
                 <h6
-                  class='font-bold custom-transition delay-2 s0'
+                  class='font-bold custom-transition delay-2'
                   style={!$isInSolution ? 'opacity: 0;transform: translateY(80px);' : null}
                 >
                   {l.solution.mockTest}
                 </h6>
                 <span
-                  class='custom-transition delay-3 s0'
+                  class='custom-transition delay-3'
                   style={!$isInSolution ? 'opacity: 0;transform: translateY(80px);' : null}
                 >
                   {l.solution.mockTestDesc}
                 </span>
               </div>
-              <div class='flex flex-col gap-2 h-40 custom-transition delay-3 s1 absolute invisible'>
-                <h6 class='font-bold custom-transition delay-2'>{l.solution.yourLearningPath}</h6>
-                <span class='custom-transition delay-3'>{l.solution.yourLearningPathDesc}</span>
+              <div
+                class='flex flex-col gap-2 h-40 custom-transition delay-3 s1 absolute'
+                style='animation: fadeOutRight 1s forwards'
+              >
+                <h6
+                  class='font-bold custom-transition delay-2'
+                  style={!$isInSolution ? 'opacity: 0;transform: translateY(80px);' : null}
+                >
+                  {l.solution.yourLearningPath}
+                </h6>
+                <span
+                  class='custom-transition delay-3'
+                  style={!$isInSolution ? 'opacity: 0;transform: translateY(80px);' : null}
+                >
+                  {l.solution.yourLearningPathDesc}
+                </span>
               </div>
-              <div class='flex flex-col gap-2 h-40 custom-transition delay-3 s2 absolute invisible'>
-                <h6 class='font-bold custom-transition delay-2'>{l.solution.tutor}</h6>
-                <span class='custom-transition delay-3'>{l.solution.tutorDesc}</span>
+              <div
+                class='flex flex-col gap-2 h-40 custom-transition delay-3 s2 absolute'
+                style='animation: fadeOutRight 1s forwards'
+              >
+                <h6
+                  class='font-bold custom-transition delay-2'
+                  style={!$isInSolution ? 'opacity: 0;transform: translateY(80px);' : null}
+                >
+                  {l.solution.tutor}
+                </h6>
+                <span
+                  class='custom-transition delay-3'
+                  style={!$isInSolution ? 'opacity: 0;transform: translateY(80px);' : null}
+                >
+                  {l.solution.tutorDesc}
+                </span>
               </div>
             </div>
             <span
@@ -185,7 +198,8 @@ export class SolutionContent extends Component<Props> {
               {/* <img src={`/images/${l.menu.lang}/learning-path.svg`} alt={l.solution.yourLearningPath} /> */}
             </li>
             <li className={$activeSolution == 2 ? 'active' : null}>
-              <img src={`/images/${l.menu.lang}/tutor.svg`} alt={l.solution.tutor} />
+              <SolutionSVG l={l.menu.languageCode} file={SvgFile.Tutor} size={[696, 630]} />
+              {/* <img src={`/images/${l.menu.lang}/tutor.svg`} alt={l.solution.tutor} /> */}
             </li>
           </ul>
         </div>
