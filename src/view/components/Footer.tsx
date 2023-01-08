@@ -4,7 +4,7 @@ type Props = {
 
 export default function Footer({ l }: Props) {
   return (
-    <div class='md:h-[171px] w-full bg-blueGrey-800 flex flex-col text-blueGrey-200 bg-footer p-6'>
+    <div class='md:h-[171px] w-full bg-blueGrey-800 flex flex-col text-blueGrey-200 bg-footer p-6 z-10'>
       <div class='w-full md:h-[124px]'>
         <div class='flex flex-col md:flex-row justify-between items-start gap-6 w-full'>
           <div class='w-[126px] hidden md:block'></div>

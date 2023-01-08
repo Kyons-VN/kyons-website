@@ -8,7 +8,7 @@ export function HomeContent({ l }: Props) {
   const [textStyle, setTextStyle] = useState('opacity:0');
 
   useEffect(() => {
-    setTextStyle('transition: all ease-out 0.8s; opacity: 1; transition-delay: 1s');
+    setTextStyle('transition: all ease-out 0.8s; opacity: 1; transition-delay: 0.8s');
   });
 
   return (

@@ -4,7 +4,15 @@ import { HomeContent } from '@components/contents/HomeContent';
 import { SolutionContent } from '@components/contents/SolutionContent';
 import { useStore } from '@nanostores/preact';
 import { useSwipeable } from 'react-swipeable';
-import { activeMenu, isGoUp, setActive, setNextSolution, setPreviousSolution, setScrolling } from 'src/application/app';
+import {
+  activeMenu,
+  isGoUp,
+  isInSolution,
+  setActive,
+  setNextSolution,
+  setPreviousSolution,
+  setScrolling,
+} from 'src/application/app';
 import { ContactContent } from './contents/ContactContent';
 
 type Props = {
@@ -43,7 +51,9 @@ export default function InteractiveLayer({ l }: Props) {
     //   e.stopImmediatePropagation()
     // console.log(running);
 
-    if (running || isMobile) {
+    if (running) {
+      // console.log();
+
       return;
     } else {
       running = true;
@@ -56,6 +66,28 @@ export default function InteractiveLayer({ l }: Props) {
         //   console.log('2');
         //   setActiveMenu(0);
         // }
+        var solutionElm = document.getElementById('solution');
+        var creatorElm = document.getElementById('creator');
+        var contactElm = document.getElementById('contact');
+        var aboutUsElm = document.getElementById('about-us');
+        // console.log(solutionElm.offsetTop, window.scrollY);
+        if (window.scrollY > contactElm.offsetTop - window.screen.height / 2) {
+          activeMenu.set(4);
+        } else if (window.scrollY > creatorElm.offsetTop - window.screen.height / 2) {
+          activeMenu.set(3);
+          isInSolution.set(false);
+        } else if (window.scrollY > solutionElm.offsetTop - window.screen.height / 2) {
+          isInSolution.set(true);
+          activeMenu.set(2);
+        } else if (
+          window.scrollY > aboutUsElm.offsetTop - window.screen.height / 2 &&
+          window.scrollY > window.screen.height / 2
+        ) {
+          activeMenu.set(1);
+          isInSolution.set(false);
+        } else {
+          activeMenu.set(0);
+        }
       } else {
         root.setAttribute('style', 'scroll-behavior: auto;');
         if (e['wheelDelta'] > 0) {

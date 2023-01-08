@@ -193,6 +193,9 @@ option {
 }
 
 @media (max-width: 767px) {
+  svg {
+    max-width: 100%;
+  }
   body {
     padding-top: 78px;
     height: 100vh;
@@ -220,5 +223,8 @@ option {
     background-position: center bottom;
     background-size: contain;
     background-repeat: no-repeat;
+  }
+  .custom-transition {
+    transition: all ease-out 0.5s;
   }
 }

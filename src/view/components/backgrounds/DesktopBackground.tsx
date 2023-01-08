@@ -11,6 +11,7 @@ type Props = {
 export function DesktopBackground() {
   const $activeMenu = useStore(activeMenu);
   const [width, setWidth] = useState(0);
+  const [initialized, setInitialized] = useState(false);
   const [height, setHeight] = useState(0);
   const [className, setClassName] = useState('start');
   let minX = 0;
@@ -42,6 +43,7 @@ export function DesktopBackground() {
     } else {
     }
     setViewBox(`${minX} ${minY} ${svgOriginalWidth} ${svgOriginalHeight}`);
+    setInitialized(true);
   };
 
   useEffect(() => {
@@ -50,12 +52,20 @@ export function DesktopBackground() {
       setClassName('start in');
     }
     document.addEventListener('DOMContentLoaded', function (event) {
+      console.log('DOMContentLoaded');
+
       updateViewport();
     });
+    setTimeout(() => {
+      updateViewport();
+    }, 100);
+    setTimeout(() => {
+      updateViewport();
+    }, 500);
   }, []);
 
   return (
-    <div class='overflow-hidden w-full h-full flex items-end md:block'>
+    <div class='overflow-hidden w-full h-full flex items-end md:block' style={initialized ? null : 'visibility:hidden'}>
       <svg
         id='homeAnimation'
         width={width != 0 ? width : null}

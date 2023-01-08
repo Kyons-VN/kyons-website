@@ -27,7 +27,6 @@ export class SolutionContent extends Component<Props> {
     let $isInSolution = false;
     this.s = [document.querySelectorAll('.s0'), document.querySelectorAll('.s1'), document.querySelectorAll('.s2')];
     activeSolution.subscribe((value) => {
-      console.log(value);
       const isLeft = value > $activeSolution;
       this.fade(this.s[$activeSolution], false, isLeft);
       // setTimeout(() => {
@@ -67,7 +66,10 @@ export class SolutionContent extends Component<Props> {
     return (
       <div class='flex flex-row w-full h-full'>
         <div id='solution' class='absolute mt-[-78px]'></div>
-        <div class='w-full md:w-[416px] h-full bg-lightOrange-4 md:bg-blueGrey-700 flex flex-col px-6' {...handlers}>
+        <div
+          class='overflow-hidden w-full md:w-[416px] h-full bg-lightOrange-4 md:bg-blueGrey-700 flex flex-col px-6'
+          {...handlers}
+        >
           <div class='flex flex-col gap-6 pt-6 md:p-6 md:text-white md:mt-28 h-full'>
             <h5
               class='text-orange custom-transition'
@@ -75,25 +77,30 @@ export class SolutionContent extends Component<Props> {
             >
               {l.solution.ourSolution}
             </h5>
-            <div class='md:hidden flex justify-center h-[25vh]'>
+            <div
+              class='md:hidden flex justify-center h-[25vh] custom-transition'
+              style={!$isInSolution ? 'opacity: 0;transform: translateY(80px);' : null}
+            >
               <img
                 // className={$activeSolution == 0 ? 'opacity-1 custom-transition delay-2 s0' : 'opacity-0'}
-                // class='custom-transition delay-2 s0'
+                class='custom-transition absolute s0 h-32'
                 // style={!$isInSolution ? 'opacity: 0' : null}
                 src={`/images/${l.menu.lang}/mock-test.svg`}
                 alt={l.solution.mockTest}
               />
               <img
-                class='custom-transition delay-2 s1'
-                style={!$isInSolution ? 'opacity: 0' : null}
+                class='custom-transition absolute s1 h-32'
+                // style={!$isInSolution ? 'opacity: 0' : null}
                 src={`/images/${l.menu.lang}/learning-path.svg`}
                 alt={l.solution.yourLearningPath}
+                style='animation: fadeOutRight 1s forwards'
               />
               <img
-                class='custom-transition delay-2 s2'
-                style={!$isInSolution ? 'opacity: 0' : null}
+                class='custom-transition absolute s2 h-32'
+                // style={!$isInSolution ? 'opacity: 0' : null}
                 src={`/images/${l.menu.lang}/tutor.svg`}
                 alt={l.solution.tutor}
+                style='animation: fadeOutRight 1s forwards'
               />
             </div>
             <div className='relative h-40'>
