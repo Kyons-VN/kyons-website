@@ -65,7 +65,7 @@
       }
       #newRoad {
         opacity: 1;
-        transition-delay: 0.5s;
+        transition-delay: 0.8s;
       }
     }
   }
@@ -80,6 +80,7 @@
     #bubble2,
     #bubble3 {
       transform: scale(0);
+      transition-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
     }
     #bulb {
       transform-origin: 80% 40%;

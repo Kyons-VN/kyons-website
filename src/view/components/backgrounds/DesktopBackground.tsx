@@ -20,6 +20,7 @@ export function DesktopBackground() {
   const svgOriginalHeight = 1407;
   const svgOriginRatio = svgOriginalWidth / svgOriginalHeight;
   const [viewBox, setViewBox] = useState(`${minX} ${minY} ${svgOriginalWidth} ${svgOriginalHeight}`);
+  const isMobile = document.body.offsetWidth < 768;
 
   const updateViewport = () => {
     // if (interactiveLayer == undefined) return;
@@ -41,9 +42,9 @@ export function DesktopBackground() {
         minX = ((interactiveLayer.offsetHeight * svgOriginRatio - interactiveLayer.offsetWidth) / 2) * svgOriginRatio;
       }
     } else {
+      // setWidth(100);
     }
     setViewBox(`${minX} ${minY} ${svgOriginalWidth} ${svgOriginalHeight}`);
-    setInitialized(true);
   };
 
   useEffect(() => {
@@ -58,6 +59,7 @@ export function DesktopBackground() {
     });
     setTimeout(() => {
       updateViewport();
+      setInitialized(true);
     }, 100);
     setTimeout(() => {
       updateViewport();
@@ -68,7 +70,7 @@ export function DesktopBackground() {
     <div class='overflow-hidden w-full h-full flex items-end md:block' style={initialized ? null : 'visibility:hidden'}>
       <svg
         id='homeAnimation'
-        width={width != 0 ? width : null}
+        width={width != 0 ? width : isMobile ? '100%' : null}
         height={height != 0 ? height : null}
         viewBox={viewBox}
         fill='none'

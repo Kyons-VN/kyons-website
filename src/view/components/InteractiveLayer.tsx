@@ -66,28 +66,6 @@ export default function InteractiveLayer({ l }: Props) {
         //   console.log('2');
         //   setActiveMenu(0);
         // }
-        var solutionElm = document.getElementById('solution');
-        var creatorElm = document.getElementById('creator');
-        var contactElm = document.getElementById('contact');
-        var aboutUsElm = document.getElementById('about-us');
-        // console.log(solutionElm.offsetTop, window.scrollY);
-        if (window.scrollY > contactElm.offsetTop - window.screen.height / 2) {
-          activeMenu.set(4);
-        } else if (window.scrollY > creatorElm.offsetTop - window.screen.height / 2) {
-          activeMenu.set(3);
-          isInSolution.set(false);
-        } else if (window.scrollY > solutionElm.offsetTop - window.screen.height / 2) {
-          isInSolution.set(true);
-          activeMenu.set(2);
-        } else if (
-          window.scrollY > aboutUsElm.offsetTop - window.screen.height / 2 &&
-          window.scrollY > window.screen.height / 2
-        ) {
-          activeMenu.set(1);
-          isInSolution.set(false);
-        } else {
-          activeMenu.set(0);
-        }
       } else {
         root.setAttribute('style', 'scroll-behavior: auto;');
         if (e['wheelDelta'] > 0) {
@@ -108,7 +86,7 @@ export default function InteractiveLayer({ l }: Props) {
   }
 
   const defaultClasses =
-    'md:absolute md:top-0 md:left-0 w-full h-auto min-h-[calc(100vh_-_78px)] md:h-full md:flex-row md:justify-center';
+    'md:absolute md:top-0 md:left-0 w-full h-auto min-h-[calc(100vh_-_102px)] md:h-full md:flex-row md:justify-center';
   // console.log(isMobile);
 
   function test() {
@@ -124,6 +102,32 @@ export default function InteractiveLayer({ l }: Props) {
   // </div>
 
   // onWheel = {(e) => wheel(e)}
+  if (isMobile) {
+    addEventListener('scroll', (event) => {
+      var solutionElm = document.getElementById('solution');
+      var creatorElm = document.getElementById('creator');
+      var contactElm = document.getElementById('contact');
+      var aboutUsElm = document.getElementById('about-us');
+      // console.log(solutionElm.offsetTop, window.scrollY);
+      if (window.scrollY > contactElm.offsetTop - window.screen.height / 2) {
+        activeMenu.set(4);
+      } else if (window.scrollY > creatorElm.offsetTop - window.screen.height / 2) {
+        activeMenu.set(3);
+        isInSolution.set(false);
+      } else if (window.scrollY > solutionElm.offsetTop - window.screen.height / 2) {
+        isInSolution.set(true);
+        activeMenu.set(2);
+      } else if (
+        window.scrollY > aboutUsElm.offsetTop - window.screen.height / 2 &&
+        window.scrollY > window.screen.height / 2
+      ) {
+        activeMenu.set(1);
+        isInSolution.set(false);
+      } else {
+        activeMenu.set(0);
+      }
+    });
+  }
 
   return (
     <div id='interactive-layer' class='w-full h-full flex flex-col items-center relative' onWheel={(e) => wheel(e)}>
