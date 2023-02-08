@@ -8,6 +8,7 @@ type Props = {
 
 export function CreatorContent({ l }: Props) {
   const $activeMenu = useStore(activeMenu);
+  const isMobile = document.body.offsetWidth < 768;
 
   return (
     <div class='flex flex-col md:flex-row w-full h-full px-6 py-14 gap-6 items-start bg-about-us'>
@@ -16,10 +17,10 @@ export function CreatorContent({ l }: Props) {
       <CreatorSVG
         l={l.menu.languageCode}
         class={$activeMenu == 3 ? 'start in' : 'start'}
-        size={[704, 436]}
+        size={isMobile ? [null, 214] : [704, 436]}
         viewBox={'0 0 704 436'}
       />
-      <div class='w-full md:w-1/4 md:mt-5 flex flex-col gap-6 p-6 text-center md:text-left'>
+      <div class='w-full md:w-1/4 md:mt-5 flex flex-col gap-6 py-6 md:p-6 text-center md:text-left'>
         <h5
           class='text-orange custom-transition'
           style={$activeMenu != 3 ? 'opacity: 0;transform: translateY(80px);' : null}
@@ -36,11 +37,7 @@ export function CreatorContent({ l }: Props) {
           class='custom-transition delay-2'
           style={$activeMenu != 3 ? 'opacity: 0;transform: translateY(80px);' : null}
         >
-          <a
-            class='btn'
-            href='https://docs.google.com/forms/d/e/1FAIpQLSff0jnr-WEPHdRkSTx17umXf6TkfIbuQjvZbFgbXt7jl7KM5w/viewform?usp=sf_link'
-            target='_blank'
-          >
+          <a class='btn flex md:inline-block justify-center' href='https://forms.gle/yaLgbmicUXabCHz68' target='_blank'>
             {l.creator.joinUs}
           </a>
         </div>

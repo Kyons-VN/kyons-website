@@ -7,7 +7,7 @@ type Props = {
   l: any;
 };
 
-export function ContactContent({ l }: Props) {
+export function ContactContent({ l }: Props, state) {
   const [sended, setSended] = useState(0);
   const [type, setType] = useState('');
   const [name, setName] = useState('');
@@ -16,6 +16,8 @@ export function ContactContent({ l }: Props) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    setSended(1);
+    preventScroll(true);
 
     const htmlMessage = message.replace(/\n/g, '<br />');
     // const url = `http://127.0.0.1:5001/kyonsvn/us-central1/smtpMail?type=${type}&email=${email}&name=${name}&message=${htmlMessage}`
@@ -25,11 +27,30 @@ export function ContactContent({ l }: Props) {
       // .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setSended(data.status == 200 ? 1 : -1);
+        // setTimeout(() => {
+        //   setSended(0);
+        //   preventScroll(false);
+        // }, 5000);
+        clearInput();
+        setSended(data.status == 200 ? 2 : 3);
       })
       .catch((err) => {
-        setSended(-1);
+        clearInput();
+        setSended(3);
       });
+  }
+
+  function preventScroll(isTrue: boolean) {
+    document.body.className = isTrue ? 'overflow-hidden' : null;
+    const nav = document.getElementById('menu');
+    nav.className = isTrue ? 'menu z-0' : 'menu';
+  }
+
+  function clearInput() {
+    setEmail('');
+    setType('');
+    setName('');
+    setMessage('');
   }
 
   const $activeMenu = useStore(activeMenu);
@@ -52,7 +73,7 @@ export function ContactContent({ l }: Props) {
             {l.contact.contactDesc}
           </span>
         </div>
-        <form onSubmit={handleSubmit} class='w-full md:w-[600px] flex flex-col gap-6'>
+        <form id='form' onSubmit={handleSubmit} class='w-full md:w-[600px] flex flex-col gap-6'>
           <div class='flex flex-col gap-2'>
             <select
               class='control custom-transition delay-2'
@@ -106,18 +127,44 @@ export function ContactContent({ l }: Props) {
           </div>
           <div
             className={
-              (sended != 0 ? 'flex' : 'hidden') +
-              (sended == 1 ? ' text-green-500' : '') +
-              (sended == -1 ? ' text-red-0' : '')
+              sended != 0
+                ? 'flex flex-col items-center justify-center fixed z-30 top-0 left-0 w-screen h-screen bg-black bg-opacity-80'
+                : 'hidden'
             }
           >
-            {sended == 1 ? l.contact.success : l.contact.error}
+            {(sended == 2 || sended == 3) && (
+              <div class='w-[333px] bg-white p-8 rounded-lg'>
+                {sended == 2 ? (
+                  <>
+                    <div class='flex flex-col'>
+                      <strong>{l.contact.thankYou}</strong>
+                      <div class='h-2'></div>
+                      <span>{l.contact.success}</span>
+                      <div class='h-6'></div>
+                      <button
+                        type='button'
+                        class='btn w-full md:w-auto flex md:inline-block justify-center'
+                        onclick={() => {
+                          preventScroll(false);
+                          setSended(0);
+                        }}
+                      >
+                        {l.contact.close}
+                      </button>
+                    </div>
+                  </>
+                ) : sended == 3 ? (
+                  l.contact.error
+                ) : null}
+              </div>
+            )}
+            <div class='h-20 md:h-32'></div>
           </div>
           <div
             class='w-full flex justify-center items-center custom-transition delay-6'
             style={$activeMenu != 4 ? 'opacity: 0;transform: translateY(80px);' : null}
           >
-            <button class='btn' type='submit'>
+            <button class='btn w-full md:w-auto flex md:inline-block justify-center' type='submit'>
               {l.contact.send}
             </button>
           </div>

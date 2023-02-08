@@ -24,7 +24,12 @@ export function HomeContent({ l }: Props) {
         <span class='text-center'>{l.home.kyonsIs}</span>
         <div className='flex flex-col gap-2 items-center text-center'>
           <span>{l.home.ifStudent}</span>
-          <a class='btn-outline' href='https://student.tuhoconline.org' target='_blank' title='Kyons App'>
+          <a
+            class='btn-outline flex w-full md:w-auto md:inline-block'
+            href='https://student.kyons.vn'
+            target='_blank'
+            title='Kyons App'
+          >
             <span class='icon-monitor'></span>
             <strong class='leading-6'>{l.home.startNow}</strong>
           </a>

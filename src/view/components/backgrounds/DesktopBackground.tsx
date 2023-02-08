@@ -65,6 +65,7 @@ export function DesktopBackground() {
       updateViewport();
     }, 500);
   }, []);
+  if (isMobile) return <img class='w-full self-end' src='/images/Home.svg' />;
 
   return (
     <div class='overflow-hidden w-full h-full flex items-end md:block' style={initialized ? null : 'visibility:hidden'}>

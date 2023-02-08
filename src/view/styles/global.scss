@@ -20,10 +20,10 @@ body {
   height: 24px;
 }
 .btn {
-  @apply px-[16px] py-[9.5px] bg-orange text-white rounded-md;
+  @apply px-[16px] py-[9.5px] bg-orange text-white rounded-md font-bold;
 }
 .btn-outline {
-  @apply flex justify-center gap-3 px-4 py-2 text-orange border border-blueGrey-300 rounded-md bg-white;
+  @apply flex justify-center gap-3 px-4 py-2 text-orange border border-blueGrey-300 rounded-md bg-white font-bold;
 }
 .indicators {
   @apply list-none flex flex-row justify-center md:justify-start gap-2 md:gap-8 mb-14 p-6;
@@ -190,6 +190,9 @@ option {
     transform: translateX(0);
     opacity: 1;
   }
+}
+.z-0 {
+  z-index: 0 !important;
 }
 
 @media (max-width: 767px) {

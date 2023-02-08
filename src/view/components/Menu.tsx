@@ -44,7 +44,7 @@ export default function Menu({ l }: Props) {
   }
 
   return (
-    <nav class='menu' style={!isOpen && isMobile ? { maxHeight: '78px' } : {}}>
+    <nav id='menu' class='menu' style={!isOpen && isMobile ? { maxHeight: '78px' } : {}}>
       <div className='flex flex-row justify-between'>
         <a href='#'>
           <img

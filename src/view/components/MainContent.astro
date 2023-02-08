@@ -10,7 +10,7 @@ const { l } = Astro.props;
 ---
 
 <div class='w-full h-[calc(100vh_-_78px)] md:h-full flex relative'>
-  <div class='md:fixed md:left-[168px] top-0 left-0 w-full h-full'>
+  <div class='md:fixed md:left-[168px] top-0 left-0 w-full h-[calc(100vh_-_102px)] md:h-full flex'>
     <DesktopBackground client:only />
   </div>
   <div class='absolute top-0 left-0 w-full h-full'><InteractiveLayer l={l} client:only /></div>

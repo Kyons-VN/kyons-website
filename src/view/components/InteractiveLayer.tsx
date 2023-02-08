@@ -44,6 +44,8 @@ export default function InteractiveLayer({ l }: Props) {
   });
 
   function wheel(e: MouseEvent) {
+    const body = document.body;
+    if (body.classList.contains('overflow-hidden')) return;
     // console.log(e.view.scrollTo(0,));
 
     //  e.stopPropagation()
@@ -104,6 +106,8 @@ export default function InteractiveLayer({ l }: Props) {
   // onWheel = {(e) => wheel(e)}
   if (isMobile) {
     addEventListener('scroll', (event) => {
+      const body = document.body;
+      if (body.classList.contains('overflow-hidden')) return;
       var solutionElm = document.getElementById('solution');
       var creatorElm = document.getElementById('creator');
       var contactElm = document.getElementById('contact');
@@ -173,7 +177,7 @@ export default function InteractiveLayer({ l }: Props) {
       <div
         className={
           ($activeMenu == 4
-            ? `${defaultClasses} md:opacity-1 md:visible z-10`
+            ? `${defaultClasses} md:opacity-1 md:visible z-0`
             : `${defaultClasses} md:opacity-0 md:invisible z-0`) +
           ($activeMenu == 4 ? ' custom-transition' : ' custom-transition-1')
         }

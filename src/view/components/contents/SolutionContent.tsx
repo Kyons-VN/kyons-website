@@ -83,20 +83,20 @@ export class SolutionContent extends Component<Props> {
             >
               <img
                 // className={$activeSolution == 0 ? 'opacity-1 custom-transition delay-2 s0' : 'opacity-0'}
-                class='custom-transition absolute s0 h-32'
+                class='custom-transition absolute s0 h-[25vh]'
                 // style={!$isInSolution ? 'opacity: 0' : null}
                 src={`/images/${l.menu.lang}/mock-test.svg`}
                 alt={l.solution.mockTest}
               />
               <img
-                class='custom-transition absolute s1 h-32'
+                class='custom-transition absolute s1 h-[25vh]'
                 // style={!$isInSolution ? 'opacity: 0' : null}
                 src={`/images/${l.menu.lang}/learning-path.svg`}
                 alt={l.solution.yourLearningPath}
                 style='animation: fadeOutRight 1s forwards'
               />
               <img
-                class='custom-transition absolute s2 h-32'
+                class='custom-transition absolute s2 h-[25vh]'
                 // style={!$isInSolution ? 'opacity: 0' : null}
                 src={`/images/${l.menu.lang}/tutor.svg`}
                 alt={l.solution.tutor}
@@ -168,8 +168,8 @@ export class SolutionContent extends Component<Props> {
               style={!$isInSolution ? 'opacity: 0;transform: translateY(80px);' : null}
             >
               <a
-                class='btn'
-                href='https://student.tuhoconline.org/sign-up'
+                class='btn flex md:inline-block justify-center'
+                href='https://student.kyons.vn'
                 target='_blank'
                 title={`Kyons App | ${l.signUp}`}
               >
@@ -177,7 +177,7 @@ export class SolutionContent extends Component<Props> {
               </a>
             </div>
           </div>
-          <div class='flex-1'></div>
+          <div class='hidden md:block flex-1'></div>
           <ul class='indicators'>
             <li
               className={$activeSolution == 0 ? 'active custom-transition' : 'custom-transition'}
