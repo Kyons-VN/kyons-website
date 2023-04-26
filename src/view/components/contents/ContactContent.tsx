@@ -149,7 +149,7 @@ export function ContactContent({ l }: Props, state) {
                           setSended(0);
                         }}
                       >
-                        {l.contact.close}
+                        {l.close}
                       </button>
                     </div>
                   </>

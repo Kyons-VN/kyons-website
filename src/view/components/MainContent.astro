@@ -20,16 +20,16 @@ const { l } = Astro.props;
   class='absolute w-full h-full bg-black bg-opacity-80 flex flex-col items-center justify-center z-30 p-6'
 >
   <div class='flex flex-col w-full max-w-[700px] rounded-lg justify-start overflow-y-auto p-4 md:p-6 bg-white gap-6'>
-    <img src='/images/waitlist-banner.jpg' alt='Waitlist Banner' class='rounded-lg' />
-    <h4>Dừng khoảng chừng là 2 giây!</h4>
+    <img src={`/images/${l.menu.lang}/waitlist-banner.jpg`} alt='Waitlist Banner' class='rounded-lg' />
+    <h4>{l.popup.title}</h4>
     <p>
-      Phiên bản chính thức của Kyons với những nâng cấp thú vị và vô cùng hữu ích sắp được ra mắt. Để nhận được thông
-      báo và trải nghiệm sớm nhất, cũng như giành lấy những món quà bất ngờ, bạn hãy cùng tham gia “Danh sách chờ” của
-      Kyons nhé!
+      {l.popup.content}
     </p>
     <div class='flex gap-2'>
-      <button class='btn btn-outline flex-1 close'>Đóng</button>
-      <a class='btn flex-1 close' href='http://student.kyons.vn/waitlist' target='_blank'>Đăng ký</a>
+      <button class='btn btn-outline flex-1 close'>{l.close}</button>
+      <a id='waitlist_btn' class='btn flex-1 close' href='http://student.kyons.vn/waitlist' target='_blank'
+        >{l.register}</a
+      >
     </div>
   </div>
   <div class='h-[80px] md:h-0'></div>
