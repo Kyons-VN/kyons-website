@@ -8,6 +8,7 @@
       "@styles/*": ["src/view/styles/*"],
       "@data/*": ["src/data/*"],
       "@application/*": ["src/application/*"]
-    }
+    },
+    "jsx": "react"
   }
 }
