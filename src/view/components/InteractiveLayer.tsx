@@ -88,7 +88,7 @@ export default function InteractiveLayer({ l }: Props) {
   }
 
   const defaultClasses =
-    'md:absolute md:top-0 md:left-0 w-full h-auto min-h-[calc(100vh_-_102px)] md:h-full md:flex-row md:justify-center';
+    'md:absolute md:top-0 md:left-0 w-full h-auto min-h-[calc(100vh_-_78px)] md:h-full md:flex-row md:justify-center';
   // console.log(isMobile);
 
   function test() {

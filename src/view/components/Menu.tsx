@@ -110,7 +110,6 @@ export default function Menu({ l }: Props) {
       <div
         class='flex flex-row relative h-10 md:px-4 md:py-[10px] items-center justify-between text-sm md:w-24'
         onClick={() => setIsHover(!isHover)}
-        onBlur={() => setIsHover(false)}
         tabIndex={0}
       >
         <span>{language}</span>

@@ -20,10 +20,11 @@ export function HomeContent({ l }: Props) {
             <br />
             <span class='md:leading-normal text-orange'>{l.home.knowledgeStart2}</span>
           </h1>
-          <span>Thi đại học bao đậu với các bài thi thử với lộ trình học được tạo ra bởi AI của Kyons!</span>
+          <span>{l.home.knowledgeStart3}</span>
         </div>
-        <div class='flex flex-col gap-4 md:gap-8 w-[283px] absolute md:bottom-[200px] md:right-[180px] text-center md:text-left bottom-[80px]'>
-          <h4>{l.home.noLimit1}</h4>
+        <div class='flex flex-col gap-4 md:gap-8 w-[283px] absolute md:bottom-[200px] md:right-[180px] text-center md:text-left bottom-[120px]'>
+          <h4 class='hidden md:block'>{l.home.noLimit1}</h4>
+          <strong class='md:hidden'>{l.home.noLimit1}</strong>
           <div className='flex flex-col gap-5 '>
             <a
               class='btn flex w-full md:w-auto md:inline-block'
@@ -34,7 +35,7 @@ export function HomeContent({ l }: Props) {
               <span class='icon-monitor'></span>
               <span class='leading-6'>{l.home.noLimit2}</span>
             </a>
-            <span>{l.home.noLimit3}</span>
+            <strong>{l.home.noLimit3}</strong>
           </div>
         </div>
       </div>

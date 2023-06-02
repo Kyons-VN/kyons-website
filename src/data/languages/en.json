@@ -8,9 +8,12 @@
     "contact": "Contact Us"
   },
   "home": {
-    "knowledgeStart1": "IT ALL BEGINS WITH A",
-    "knowledgeStart2": "WHY",
-    "kyonsIs": "Kyons™ is the AI-powered learning platform that helps you focus on your weaknesses to attain the best results in the shortest time!",
+    "knowledgeStart1": "THI ĐẠI HỌC, HỌC VỚI AI?",
+    "knowledgeStart2": "VỚI AI!",
+    "knowledgeStart3": "Pass the university entrance exam with flying colours with Kyons’ AI-powered learning paths",
+    "noLimit1": "FREE access to Kyons in 14 days and Unlimited Smart Mock Tests",
+    "noLimit2": "Take the test now",
+    "noLimit3": "(Offer is valid from 1/6 to 14/6)",
     "ifStudent": "If you are a student, you can experience Kyons at:",
     "startNow": "Let's learn!"
   },
