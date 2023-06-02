@@ -8,9 +8,11 @@
     "contact": "Liên hệ"
   },
   "home": {
-    "knowledgeStart1": "TRI THỨC KHỞI ĐẦU TỪ",
-    "knowledgeStart2": "TẠI SAO",
-    "kyonsIs": "Kyons™ là nền tảng học tập ứng dụng trí tuệ nhân tạo (AI) giúp bạn tập trung học những kiến thức mình chưa vững để đạt được kết quả cao nhất trong thời gian ngắn nhất!",
+    "knowledgeStart1": "THI ĐẠI HỌC, HỌC VỚI AI?",
+    "knowledgeStart2": "VỚI AI!",
+    "noLimit1": "Không giới hạn số lượng bài kiểm tra thử",
+    "noLimit2": "Làm cùng Kyons ngay",
+    "noLimit3": "(Áp dụng từ 1/6 đến hết 14/6)",
     "ifStudent": "Nếu bạn là học sinh, bạn có thể trải nghiệm Kyons ngay dưới đây:",
     "startNow": "Học ngay thôi"
   },

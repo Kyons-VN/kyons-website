@@ -9,6 +9,6 @@
       "@data/*": ["src/data/*"],
       "@application/*": ["src/application/*"]
     },
-    "jsx": "react"
+    "jsx": "react-jsx"
   }
 }

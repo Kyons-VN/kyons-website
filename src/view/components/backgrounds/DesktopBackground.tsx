@@ -409,7 +409,7 @@ export function DesktopBackground() {
               </g>
             </g>
           </g>
-          <g id='mtFront'>
+          {/* <g id='mtFront'>
             <g id='mtFrontLeft' clip-path='url(#clip7_715_229)'>
               <g id='Layer_1-2_7'>
                 <g id='Group_10'>
@@ -617,7 +617,7 @@ export function DesktopBackground() {
                 </g>
               </g>
             </g>
-          </g>
+          </g> */}
         </g>
         <defs>
           <clipPath id='clip0_715_229'>

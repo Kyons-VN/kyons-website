@@ -7,20 +7,18 @@ body {
 
   font-family: 'Montserrat', sans-serif;
 }
-.why {
-  @apply flex flex-col items-center w-[320px];
+// .why {
+//   @apply flex flex-col items-center w-[346px];
 
-  background-image: url('/images/Home/why.svg');
-  background-repeat: no-repeat;
-  background-position: center 33px;
-}
+//   background-image: url('/images/Home/why.svg');
+//   background-repeat: no-repeat;
+//   background-position: center 33px;
+// }
 .icon-monitor {
-  background-image: url('/images/Home/button.png');
-  width: 24px;
-  height: 24px;
+  @apply inline-flex w-[24px] h-[24px] bg-[url('/images/Home/button.svg')];
 }
 .btn {
-  @apply px-[16px] py-[9.5px] bg-orange text-white rounded-md font-bold text-center;
+  @apply flex items-center justify-center gap-4 px-[16px] py-[9.5px] bg-orange text-white rounded-md font-[600] text-center;
 }
 .btn-outline {
   @apply flex justify-center gap-3 px-4 py-2 text-orange border border-blueGrey-300 rounded-md bg-white font-bold cursor-pointer;
@@ -229,5 +227,17 @@ option {
   }
   .custom-transition {
     transition: all ease-out 0.5s;
+  }
+}
+.home-gradient {
+  background: url('/images/Home/Rocket.svg') no-repeat 48% 150%, url('/images/Home/Cloud.svg') no-repeat bottom,
+    url('/images/Home/Planet.svg') no-repeat center, url('/images/Home/Star.svg'),
+    linear-gradient(180.96deg, #258ac2 -18.39%, #2c3d5b 61.22%);
+  background-size: 240%, contain, contain, auto, auto;
+  @media screen and (min-width: 1024px) {
+    background: url('/images/Home/Rocket.svg') no-repeat center 10vh, url('/images/Home/Cloud.svg') no-repeat bottom,
+      url('/images/Home/Planet.svg') no-repeat center, url('/images/Home/Star.svg'),
+      linear-gradient(180.96deg, #258ac2 -18.39%, #2c3d5b 61.22%);
+    background-size: contain, contain, contain, auto, auto;
   }
 }
