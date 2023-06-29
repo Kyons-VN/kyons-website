@@ -6,6 +6,12 @@
       "name": "Development server",
       "request": "launch",
       "type": "node-terminal"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to Astro",
+      "port": 3001
     }
   ]
 }

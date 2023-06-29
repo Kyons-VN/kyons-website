@@ -1,0 +1,199 @@
+import { Component } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
+import './home.scss';
+
+type Props = {
+  l: any;
+};
+export class HomeContent extends Component<Props> {
+  showPioneer;
+  setShowPioneer;
+  textStyle;
+  setTextStyle;
+  componentDidMount() {
+    console.log('mounted');
+    addEventListener('scroll', (event) => {
+      if (this.showPioneer) this.setShowPioneer(false);
+    });
+  }
+  componentWillUnmount(): void {
+    console.log('unmounted');
+  }
+  render(props) {
+    // export function HomeContent({ l }: Props) {
+    [this.textStyle, this.setTextStyle] = useState('opacity:0');
+    const [activeTab, setActiveTab] = useState(1);
+    [this.showPioneer, this.setShowPioneer] = useState(false);
+    const l = props.l;
+
+    useEffect(() => {
+      this.setTextStyle('transition: all ease-out 0.8s; opacity: 1; transition-delay: 0.8s');
+    });
+
+    return (
+      <>
+        <div className='w-full h-full flex justify-center home-gradient text-white relative'>
+          <div
+            class='w-full h-screen px-5 sm:px-10 py-6 sm:py-6 sm:w-[800px] col gap-6 items-center'
+            style={this.textStyle}
+          >
+            <div class='w-full col justify-center'>
+              <div class='col gap-1 sm:gap-3 text-center'>
+                <h1 class='extra-large' style='text-wrap: balance'>
+                  <span>{l.home.knowledgeStart1} </span>
+                  <span class='text-deepOrange'>{l.home.knowledgeStart2}</span>
+                </h1>
+                <h4 class='hidden sm:block'>{l.home.knowledgeStart3}</h4>
+                <div class='h8 sm:hidden'>{l.home.knowledgeStart3}</div>
+              </div>
+              <div class='h-6 sm:h-7'></div>
+              <div class='col bg-blueGrey-800 rounded-2xl relative'>
+                <div id='callout' class='flex items-center justify-center'>
+                  <span
+                    class='rotate-[14.646deg] font-bold text-sm sm:text-xl'
+                    dangerouslySetInnerHTML={{ __html: l.home.fromTo }}
+                  ></span>
+                </div>
+                <b class='flex items-center justify-center h-[60px] text-center p-3 order-2 sm:order-1'>
+                  <span dangerouslySetInnerHTML={{ __html: l.home.followFacebook }}></span>
+                </b>
+                <div class='bg-blue-gradien rounded-2xl shadow-2 flex h-[280px] sm:h-[60vh] sm:min-h-[410px] order-1 sm:order-2'>
+                  <div
+                    className={`flex-col flex-1 p-4 sm:p-8 sm:items-center sm:flex ${
+                      activeTab == 0 ? 'flex' : 'hidden'
+                    }`}
+                  >
+                    <div class='hidden sm:flex flex-col gap-4 items-center'>
+                      <h5>FREE</h5>
+                      <h1>{l.home.free}</h1>
+                    </div>
+                    <div class='sm:hidden gap-4'>
+                      <div class='h8'>FREE</div>
+                      <h6>{l.home.free}</h6>
+                    </div>
+                    <div className='col w-full sm:flex-1 sm:justify-center'>
+                      <ul class='col gap-3'>
+                        <li class='flex gap-2 items-start'>
+                          <img src='/images/Home/Checkbox.svg' alt='' />
+                          <span dangerouslySetInnerHTML={{ __html: l.home.freeDesc1 }}></span>
+                        </li>
+                        <li class='flex gap-2 items-start'>
+                          <img src='/images/Home/Checkbox.svg' alt='' />
+                          <span dangerouslySetInnerHTML={{ __html: l.home.freeDesc2 }}></span>
+                        </li>
+                        <li class='flex gap-2 items-start'>
+                          <img src='/images/Home/Checkbox.svg' alt='' />
+                          <span dangerouslySetInnerHTML={{ __html: l.home.freeDesc3 }}></span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class='flex-1 sm:flex-none'></div>
+                    <a href='https://student.kyons.vn' target='_blank' class='btn btn-outline'>
+                      {l.home.tryNow}
+                    </a>
+                  </div>
+                  <div className={`flex-col flex-1 bg-white rounded-2xl sm:flex ${activeTab == 1 ? 'flex' : 'hidden'}`}>
+                    <div class='col flex-1 p-5 sm:p-8 sm:items-center text-secondaryBlue'>
+                      <div class='hidden sm:flex flex-col items-center'>
+                        <h5 class='text-orange'>PLUS</h5>
+                        <div class='h-3'></div>
+                        <div class='flex items-center text-primaryBlue'>
+                          <b>VND</b>
+                          <span class='w-3'></span>
+                          <h1 class='flex text-orange'>70.000</h1>
+                          <b class='self-end h-8'>/ 30 {l.home.day}</b>
+                        </div>
+                        <div class='flex items-center text-blueGrey-400'>
+                          <b>VND</b>
+                          <span class='w-3'></span>
+                          <h1 class='flex line-through'>180.000</h1>
+                          <b class='self-end h-8'>/ 30 {l.home.day}</b>
+                        </div>
+                      </div>
+                      <div class='flex flex-col sm:hidden sm:items-center'>
+                        <div class='text-orange h8'>PLUS</div>
+                        <div class='sm:h-3'></div>
+                        <div class='flex text-primaryBlue'>
+                          <b>VND</b>
+                          <b class='text-orange'>&nbsp;70.000</b>
+                          <b>&nbsp;/ 30 {l.home.day}</b>
+                        </div>
+                        <div class='flex items-center text-blueGrey-400'>
+                          <b>VND</b>
+                          <span class='flex line-through'>&nbsp;180.000</span>
+                          <b>&nbsp;/ 30 {l.home.day}</b>
+                        </div>
+                      </div>
+                      <div className='flex-1 flex items-center'>
+                        <ul class='col gap-1 sm:gap-3'>
+                          <li class='flex gap-2 items-start'>
+                            <img src='/images/Home/Checkbox-orange.svg' alt='' />
+                            <span dangerouslySetInnerHTML={{ __html: l.home.plusDesc1 }}></span>
+                          </li>
+                          <li class='flex gap-2 items-start'>
+                            <img src='/images/Home/Checkbox.svg' alt='' />
+                            <span dangerouslySetInnerHTML={{ __html: l.home.plusDesc2 }}></span>
+                          </li>
+                          <li class='flex gap-2 items-start'>
+                            <img src='/images/Home/Checkbox-orange.svg' alt='' />
+                            <span dangerouslySetInnerHTML={{ __html: l.home.plusDesc3 }}></span>
+                          </li>
+                          <li class='flex gap-2 items-start'>
+                            <img src='/images/Home/Checkbox-orange.svg' alt='' />
+                            <span
+                              dangerouslySetInnerHTML={{ __html: l.home.plusDesc4 }}
+                              onClick={() => this.setShowPioneer(true)}
+                            ></span>
+                          </li>
+                        </ul>
+                      </div>
+                      <a href='https://student.kyons.vn' target='_blank' class='btn'>
+                        {l.home.tryNow}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='flex sm:hidden justify-center mt-5'>
+                <div className='grid grid-cols-2 px-3 py-[10px] bg-blueGrey-800 rounded-lg'>
+                  <div
+                    className={`flex-1 h-[32px] px-2 py-[6px] rounded-md cursor-pointer ${
+                      activeTab == 1 ? 'bg-orange' : ''
+                    }`}
+                    onClick={() => setActiveTab(1)}
+                  >
+                    {l.home.plusPackage}
+                  </div>
+                  <div
+                    className={`flex-1 h-[32px] px-2 py-[6px] rounded-md cursor-pointer ${
+                      activeTab == 0 ? 'bg-orange' : ''
+                    }`}
+                    onClick={() => setActiveTab(0)}
+                  >
+                    {l.home.freePackage}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class='fixed w-full h-full top-0 left-0 bg-black bg-opacity-50 z-30'
+            style={`display: ${this.showPioneer ? 'block' : 'none'}`}
+          >
+            <div class='w-full h-full flex justify-center items-center'>
+              <div class='col bg-white rounded-2xl p-8 text-primaryBlue w-full max-w-[652px]'>
+                <div class='col gap-6'>
+                  <h4>{l.home.pioneer}</h4>
+                  <span dangerouslySetInnerHTML={{ __html: l.home.pioneerDesc }}></span>
+                  <button class='btn' onClick={() => this.setShowPioneer(false)}>
+                    {l.home.understood}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+}

@@ -4,18 +4,17 @@
     "languageCode": "en",
     "aboutUs": "About Kyons",
     "solution": "Our solutions",
-    "kyonsCreator": "Kyons Creator Program",
+    "kyonsCreator": "Kyons Creator",
     "contact": "Contact Us"
   },
   "home": {
-    "knowledgeStart1": "THI ĐẠI HỌC, HỌC VỚI AI?",
-    "knowledgeStart2": "VỚI AI!",
-    "knowledgeStart3": "Pass the university entrance exam with flying colours with Kyons’ AI-powered learning paths",
-    "noLimit1": "FREE access to Kyons in 14 days and Unlimited Smart Mock Tests",
-    "noLimit2": "Take the test now",
-    "noLimit3": "(Offer is valid from 4/6 to 18/6)",
-    "ifStudent": "If you are a student, you can experience Kyons at:",
-    "startNow": "Let's learn!"
+    "knowledgeStart1": "THI ĐẠI HỌC,",
+    "knowledgeStart2": " HỌC VỚI AI?",
+    "knowledgeStart3": "VỚI AI!",
+    "solveMathExam": "National High School Graduation Exam 2023 - Mathematics",
+    "doItNow": "Try it on Kyons",
+    "syncRealTime": "(All exam paper codes will be updated)",
+    "aiGenerator": "Prepare for the National High School Graduation Exam with Kyons’s AI-powered mock tests and learning paths"
   },
   "aboutUs": {
     "kyons": "About Kyons",
@@ -50,7 +49,7 @@
     "investors": "Investors",
     "presses": "Presses",
     "potentialTeamates": "Potential teamates",
-    "email": "Email *",
+    "email": "Email/Phone *",
     "name": "Name",
     "message": "Message *",
     "send": "Send message",

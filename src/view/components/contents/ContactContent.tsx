@@ -57,7 +57,7 @@ export function ContactContent({ l }: Props, state) {
 
   return (
     <div class='flex flex-col w-full h-screen'>
-      <div id='contact' class='absolute mt-[-78px]'></div>
+      <div id='contact' class='absolute mt-[-56px]'></div>
       <div class='flex-1 flex flex-col gap-6 items-center justify-center p-6 bg-contact'>
         <div class='w-full flex flex-col gap-6 items-center'>
           <h5

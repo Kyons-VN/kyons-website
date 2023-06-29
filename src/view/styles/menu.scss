@@ -1,5 +1,13 @@
 .menu {
-  @apply fixed md:relative w-full md:max-w-[168px] z-20 flex flex-col gap-6 md:gap-12 bg-blueGrey-800 px-6 py-[12px] md:px-3 md:pt-9 md:pb-36 text-white font-semibold md:max-h-full overflow-hidden md:overflow-auto;
+  @apply fixed md:relative w-full md:max-w-[156px] z-20 md:z-0 flex flex-col gap-6 md:gap-12 bg-blueGrey-800 px-6 py-[12px] md:px-3 md:pt-9 md:pb-36 text-white font-semibold md:max-h-full overflow-hidden md:overflow-auto;
+  @media screen and (max-width: 767px) {
+    &.hide {
+      max-height: 56px;
+    }
+    &.show {
+      max-height: unset;
+    }
+  }
 }
 .menu-items {
   @apply flex flex-col flex-1 md:pl-6 gap-6 relative md:text-xs mt-6 md:mt-0;
@@ -51,7 +59,7 @@
   }
 }
 
-// @media (min-width: 768px) {
+// @media (min-width: 756px) {
 //   .menu-items::before,.menu-items > li:not(.active)::before,.menu-items > li.active::before{
 //     @apply hidden;
 //   }

@@ -5,7 +5,7 @@ type Props = {
 export function AboutUsContent({ l }: Props) {
   return (
     <div class='bg-about-us w-full md:h-full flex justify-center relative'>
-      <div id='about-us' class='absolute mt-[-78px]'></div>
+      <div id='about-us' class='absolute mt-[-56px]'></div>
       <div class='w-full md:w-[666px] md:mt-[16vh] py-6 flex flex-col gap-6 items-center'>
         <h5 class='text-orange font-bold'>{l.aboutUs.kyons}</h5>
         <div class='flex flex-col gap-2 px-8 text-center'>

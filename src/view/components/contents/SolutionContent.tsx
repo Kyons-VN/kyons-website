@@ -65,7 +65,7 @@ export class SolutionContent extends Component<Props> {
 
     return (
       <div class='flex flex-row w-full h-full'>
-        <div id='solution' class='absolute mt-[-78px]'></div>
+        <div id='solution' class='absolute mt-[-56px]'></div>
         <div
           class='overflow-hidden w-full md:w-[416px] h-full bg-lightOrange-4 md:bg-blueGrey-700 flex flex-col px-6'
           {...handlers}

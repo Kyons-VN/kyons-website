@@ -4,18 +4,17 @@
     "languageCode": "vi",
     "aboutUs": "Về Kyons",
     "solution": "Giải pháp",
-    "kyonsCreator": "Kyons Creator Program",
+    "kyonsCreator": "Kyons Creator",
     "contact": "Liên hệ"
   },
   "home": {
-    "knowledgeStart1": "THI ĐẠI HỌC, HỌC VỚI AI?",
-    "knowledgeStart2": "VỚI AI!",
-    "knowledgeStart3": "Ôn thi đại học với các bài thi thử và lộ trình học cho từng cá nhân được tạo ra bởi AI của Kyons",
-    "noLimit1": "Trải nghiệm Kyons MIỄN PHÍ trong 14 ngày và không giới hạn số lượng bài thi thử",
-    "noLimit2": "Tạo tài khoản Kyons ngay",
-    "noLimit3": "(Áp dụng từ 4/6 đến hết 18/6)",
-    "ifStudent": "Nếu bạn là học sinh, bạn có thể trải nghiệm Kyons ngay dưới đây:",
-    "startNow": "Học ngay thôi"
+    "knowledgeStart1": "THI ĐẠI HỌC,",
+    "knowledgeStart2": " HỌC VỚI AI?",
+    "knowledgeStart3": "VỚI AI!",
+    "solveMathExam": "Giải đề thi Toán THPTQG 2023 cùng Kyons!",
+    "doItNow": "Làm cùng Kyons ngay",
+    "syncRealTime": "(Các mã đề được cập nhật liên tục trên hệ thống)",
+    "aiGenerator": "Luyện thi đại học với các bài thi thử và lộ trình học được tạo ra bởi AI của Kyons!"
   },
   "aboutUs": {
     "kyons": "Về Kyons",
@@ -50,7 +49,7 @@
     "investors": "Nhà đầu tư",
     "presses": "Báo chí",
     "potentialTeamates": "Đồng đội tiềm năng",
-    "email": "Email *",
+    "email": "Email/Điện thoại *",
     "name": "Tên của bạn",
     "message": "Lời nhắn *",
     "send": "Gửi tin nhắn",

@@ -4,15 +4,7 @@ import { HomeContent } from '@components/contents/HomeContent';
 import { SolutionContent } from '@components/contents/SolutionContent';
 import { useStore } from '@nanostores/preact';
 import { useSwipeable } from 'react-swipeable';
-import {
-  activeMenu,
-  isGoUp,
-  isInSolution,
-  setActive,
-  setNextSolution,
-  setPreviousSolution,
-  setScrolling,
-} from 'src/application/app';
+import { activeMenu, isGoUp, isInSolution, setActive, setScrolling } from 'src/application/app';
 import { ContactContent } from './contents/ContactContent';
 
 type Props = {
@@ -32,12 +24,8 @@ export default function InteractiveLayer({ l }: Props) {
   var root = document.querySelector(':root');
 
   const handlers = useSwipeable({
-    // onSwipedLeft: () => setActiveMenu($activeMenu + 1),
-    // onSwipedRight: () => setActiveMenu($activeMenu - 1),
-    // onSwipedDown: () => setActiveMenu($activeMenu-1),
-    // onSwipedUp: () => setActiveMenu($activeMenu+1),
-    onSwipedLeft: () => setNextSolution(),
-    onSwipedRight: () => setPreviousSolution(),
+    onSwipedUp: () => setActiveMenu($activeMenu + 1),
+    onSwipedDown: () => setActiveMenu($activeMenu - 1),
     swipeDuration: 500,
     preventScrollOnSwipe: true,
     trackMouse: true,
@@ -88,7 +76,7 @@ export default function InteractiveLayer({ l }: Props) {
   }
 
   const defaultClasses =
-    'md:absolute md:top-0 md:left-0 w-full h-auto min-h-[calc(100vh_-_78px)] md:h-full md:flex-row md:justify-center';
+    'md:absolute md:top-0 md:left-0 w-full h-auto min-h-[calc(100vh_-_56px)] md:h-full md:flex-row md:justify-center';
   // console.log(isMobile);
 
   function test() {
@@ -134,7 +122,12 @@ export default function InteractiveLayer({ l }: Props) {
   }
 
   return (
-    <div id='interactive-layer' class='w-full h-full flex flex-col items-center relative' onWheel={(e) => wheel(e)}>
+    <div
+      id='interactive-layer'
+      class='w-full h-full flex flex-col items-center relative'
+      onWheel={(e) => wheel(e)}
+      {...handlers}
+    >
       <div
         className={
           ($activeMenu == 0 ? `${defaultClasses} opacity-1 z-10` : `${defaultClasses} opacity-0 z-0`) +

@@ -51,6 +51,9 @@ body {
 }
 h1 {
   font-size: 2.25rem;
+  &.extra-large {
+    @apply text-2xl md:text-4xl;
+  }
 }
 h2 {
   font-size: 2rem;
@@ -198,11 +201,11 @@ option {
     max-width: 100%;
   }
   body {
-    padding-top: 78px;
+    padding-top: 56px;
     height: 100vh;
   }
   .menu {
-    margin-top: -78px;
+    margin-top: -56px;
   }
   .bg-footer {
     background-image: none;
@@ -229,15 +232,9 @@ option {
     transition: all ease-out 0.5s;
   }
 }
-.home-gradient {
-  background: url('/images/Home/Rocket.svg') no-repeat 48% 170px, url('/images/Home/Cloud.svg') no-repeat bottom,
-    url('/images/Home/Planet.svg') no-repeat center, url('/images/Home/Star.svg'),
-    linear-gradient(180.96deg, #258ac2 -18.39%, #2c3d5b 61.22%);
-  background-size: 240%, contain, contain, auto, auto;
-  @media screen and (min-width: 1024px) {
-    background: url('/images/Home/Rocket.svg') no-repeat center 10vh, url('/images/Home/Cloud.svg') no-repeat bottom,
-      url('/images/Home/Planet.svg') no-repeat center, url('/images/Home/Star.svg'),
-      linear-gradient(180.96deg, #258ac2 -18.39%, #2c3d5b 61.22%);
-    background-size: contain, contain, contain, auto, auto;
-  }
+.col {
+  @apply flex flex-col;
+}
+.text-balance {
+  text-wrap: balance;
 }

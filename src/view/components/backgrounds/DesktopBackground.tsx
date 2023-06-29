@@ -27,6 +27,7 @@ export function DesktopBackground() {
 
     if (document.body.offsetWidth >= 768) {
       const interactiveLayer = document.getElementById('interactive-layer');
+      if (interactiveLayer == null) return;
       if (interactiveLayer.offsetWidth / interactiveLayer.offsetHeight >= svgOriginRatio) {
         setWidth(interactiveLayer.offsetWidth);
         setHeight(0);

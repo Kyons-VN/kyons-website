@@ -7,6 +7,7 @@ module.exports = {
         primaryBlue: '#2C3D5B',
         secondaryBlue: '#315D93',
         orange: '#FB7200',
+        deepOrange: '#FB932C',
         lightOrange: {
           1: '#FB923C',
           2: '#FDBA74',
@@ -56,7 +57,7 @@ module.exports = {
       },
       boxShadow: {
         1: '0px 3px 5px rgba(0, 0, 0, 0.1)',
-        2: '0px 5px 10px rgba(0, 0, 0, 0.15)',
+        2: '0px 5px 10px 0px rgba(0, 0, 0, 0.15)',
         3: '0px 15px 15px rgba(0, 0, 0, 0.3)',
       },
     },

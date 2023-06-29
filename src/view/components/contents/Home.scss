@@ -1,0 +1,26 @@
+.bg-blue-gradien {
+  background: linear-gradient(187deg, #06a5ff 0%, #273e5e 100%);
+}
+.home-gradient {
+  @media screen and (max-width: 1023px) {
+    background: url('/images/Home/Rocket.svg') no-repeat center 210px, url('/images/Home/Cloud.svg') no-repeat bottom,
+      url('/images/Home/Planet.svg') no-repeat center, url('/images/Home/Star.svg'),
+      linear-gradient(180.96deg, #258ac2 -18.39%, #2c3d5b 61.22%);
+    background-size: 250%, contain, contain, auto, auto;
+  }
+  @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    background: url('/images/Home/Rocket.svg') no-repeat center 55px, url('/images/Home/Cloud.svg') no-repeat bottom,
+      url('/images/Home/Planet.svg') no-repeat center, url('/images/Home/Star.svg'),
+      linear-gradient(180.96deg, #258ac2 -18.39%, #2c3d5b 61.22%);
+    background-size: contain, contain, contain, auto, auto;
+  }
+  @media screen and (min-width: 1440px) {
+    background: url('/images/Home/Rocket.svg') no-repeat center 55px, url('/images/Home/Cloud.svg') no-repeat bottom,
+      url('/images/Home/Planet.svg') no-repeat center, url('/images/Home/Star.svg'),
+      linear-gradient(180.96deg, #258ac2 -18.39%, #2c3d5b 61.22%);
+    background-size: auto, cover, cover, auto, auto;
+  }
+}
+.bg-blue-gradient {
+  background: linear-gradient(187deg, #06a5ff 0%, #273e5e 100%);
+}
